@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="KAEDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="KAEDBContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NyhedSet" EntityType="KAEDB.Nyhed" />
+    <EntitySet Name="ForeningsTagSet" EntityType="KAEDB.ForeningsTag" />
+    <AssociationSet Name="NyhedForeningsTag" Association="KAEDB.NyhedForeningsTag">
+      <End Role="Nyhed" EntitySet="NyhedSet" />
+      <End Role="ForeningsTag" EntitySet="ForeningsTagSet" />
+    </AssociationSet>
+    <EntitySet Name="AdministratorSet" EntityType="KAEDB.Administrator" />
+  </EntityContainer>
+  <EntityType Name="Nyhed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titel" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Dato" Type="DateTime" Nullable="false" />
+    <Property Name="Tekst" Type="String" Nullable="false" />
+    <NavigationProperty Name="ForeningsTag" Relationship="KAEDB.NyhedForeningsTag" FromRole="Nyhed" ToRole="ForeningsTag" />
+  </EntityType>
+  <EntityType Name="ForeningsTag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Navn" Type="String" Nullable="false" />
+    <NavigationProperty Name="Nyhed" Relationship="KAEDB.NyhedForeningsTag" FromRole="ForeningsTag" ToRole="Nyhed" />
+  </EntityType>
+  <Association Name="NyhedForeningsTag">
+    <End Type="KAEDB.Nyhed" Role="Nyhed" Multiplicity="*" />
+    <End Type="KAEDB.ForeningsTag" Role="ForeningsTag" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" />
+  </EntityType>
+</Schema>
