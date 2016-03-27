@@ -44,7 +44,7 @@
 -- -----------------------------------------------------------
 -- Entity Designer DDL Script for MySQL Server 4.1 and higher
 -- -----------------------------------------------------------
--- Date Created: 03/26/2016 23:32:27
+-- Date Created: 03/27/2016 15:49:20
 
 -- Generated from EDMX file: C:\Users\Søren\documents\visual studio 2015\Projects\KAE\KAE\KAEDB.edmx
 -- Target version: 3.0.0.0
@@ -59,23 +59,11 @@
 -- --------------------------------------------------
 
 
---    ALTER TABLE `NyhedForeningsTag` DROP CONSTRAINT `FK_NyhedForeningsTag_Nyhed`;
-
---    ALTER TABLE `NyhedForeningsTag` DROP CONSTRAINT `FK_NyhedForeningsTag_ForeningsTag`;
-
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 SET foreign_key_checks = 0;
-
-    DROP TABLE IF EXISTS `NyhedSet`;
-
-    DROP TABLE IF EXISTS `ForeningsTagSet`;
-
-    DROP TABLE IF EXISTS `AdministratorSet`;
-
-    DROP TABLE IF EXISTS `NyhedForeningsTag`;
 
 SET foreign_key_checks = 1;
 
@@ -84,44 +72,44 @@ SET foreign_key_checks = 1;
 -- --------------------------------------------------
 
 
-CREATE TABLE `NyhedSet`(
+CREATE TABLE `AdministratorSet1`(
+	`Id` int NOT NULL AUTO_INCREMENT UNIQUE, 
+	`Username` longtext NOT NULL, 
+	`Password` longtext NOT NULL);
+
+ALTER TABLE `AdministratorSet1` ADD PRIMARY KEY (Id);
+
+
+
+
+
+CREATE TABLE `ForeningsTagSet1`(
+	`Id` int NOT NULL AUTO_INCREMENT UNIQUE, 
+	`Navn` longtext NOT NULL);
+
+ALTER TABLE `ForeningsTagSet1` ADD PRIMARY KEY (Id);
+
+
+
+
+
+CREATE TABLE `NyhedSet1`(
 	`Id` int NOT NULL AUTO_INCREMENT UNIQUE, 
 	`Titel` varchar (50) NOT NULL, 
 	`Dato` datetime NOT NULL, 
 	`Tekst` longtext NOT NULL);
 
-ALTER TABLE `NyhedSet` ADD PRIMARY KEY (Id);
+ALTER TABLE `NyhedSet1` ADD PRIMARY KEY (Id);
 
 
 
 
 
-CREATE TABLE `ForeningsTagSet`(
-	`Id` int NOT NULL AUTO_INCREMENT UNIQUE, 
-	`Navn` longtext NOT NULL);
+CREATE TABLE `NyhedForeningsTag1`(
+	`ForeningsTagSet_Id` int NOT NULL, 
+	`NyhedSet_Id` int NOT NULL);
 
-ALTER TABLE `ForeningsTagSet` ADD PRIMARY KEY (Id);
-
-
-
-
-
-CREATE TABLE `AdministratorSet`(
-	`Id` int NOT NULL AUTO_INCREMENT UNIQUE, 
-	`Username` longtext NOT NULL, 
-	`Password` longtext NOT NULL);
-
-ALTER TABLE `AdministratorSet` ADD PRIMARY KEY (Id);
-
-
-
-
-
-CREATE TABLE `NyhedForeningsTag`(
-	`Nyhed_Id` int NOT NULL, 
-	`ForeningsTag_Id` int NOT NULL);
-
-ALTER TABLE `NyhedForeningsTag` ADD PRIMARY KEY (Nyhed_Id, ForeningsTag_Id);
+ALTER TABLE `NyhedForeningsTag1` ADD PRIMARY KEY (ForeningsTagSet_Id, NyhedSet_Id);
 
 
 
@@ -134,32 +122,32 @@ ALTER TABLE `NyhedForeningsTag` ADD PRIMARY KEY (Nyhed_Id, ForeningsTag_Id);
 -- --------------------------------------------------
 
 
--- Creating foreign key on `Nyhed_Id` in table 'NyhedForeningsTag'
+-- Creating foreign key on `ForeningsTagSet_Id` in table 'NyhedForeningsTag1'
 
-ALTER TABLE `NyhedForeningsTag`
-ADD CONSTRAINT `FK_NyhedForeningsTag_Nyhed`
-    FOREIGN KEY (`Nyhed_Id`)
-    REFERENCES `NyhedSet`
+ALTER TABLE `NyhedForeningsTag1`
+ADD CONSTRAINT `FK_NyhedForeningsTag1_ForeningsTagSet`
+    FOREIGN KEY (`ForeningsTagSet_Id`)
+    REFERENCES `ForeningsTagSet1`
         (`Id`)
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 
 
--- Creating foreign key on `ForeningsTag_Id` in table 'NyhedForeningsTag'
+-- Creating foreign key on `NyhedSet_Id` in table 'NyhedForeningsTag1'
 
-ALTER TABLE `NyhedForeningsTag`
-ADD CONSTRAINT `FK_NyhedForeningsTag_ForeningsTag`
-    FOREIGN KEY (`ForeningsTag_Id`)
-    REFERENCES `ForeningsTagSet`
+ALTER TABLE `NyhedForeningsTag1`
+ADD CONSTRAINT `FK_NyhedForeningsTag1_NyhedSet`
+    FOREIGN KEY (`NyhedSet_Id`)
+    REFERENCES `NyhedSet1`
         (`Id`)
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 
--- Creating non-clustered index for FOREIGN KEY 'FK_NyhedForeningsTag_ForeningsTag'
+-- Creating non-clustered index for FOREIGN KEY 'FK_NyhedForeningsTag1_NyhedSet'
 
-CREATE INDEX `IX_FK_NyhedForeningsTag_ForeningsTag`
-    ON `NyhedForeningsTag`
-    (`ForeningsTag_Id`);
+CREATE INDEX `IX_FK_NyhedForeningsTag1_NyhedSet`
+    ON `NyhedForeningsTag1`
+    (`NyhedSet_Id`);
 
 
 

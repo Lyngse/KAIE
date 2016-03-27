@@ -228,6 +228,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="index.html" />
     <Content Include="KAEDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>KAEDB.Context.cs</LastGenOutput>
@@ -239,8 +240,15 @@
       <LastGenOutput>KAEDB.cs</LastGenOutput>
       <DependentUpon>KAEDB.edmx</DependentUpon>
     </Content>
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-file-upload.min.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Custom\app.js" />
+    <Content Include="Scripts\Custom\ForsideController.js" />
+    <Content Include="Scripts\Custom\NyhederController.js" />
     <Content Include="Scripts\jquery-2.2.1.js" />
     <Content Include="Scripts\jquery-2.2.1.min.js" />
     <Content Include="Scripts\jquery-2.2.1.min.map" />
@@ -268,9 +276,21 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.14.3.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Templates\Dashboard.html" />
+    <Content Include="Templates\Foreninger.html" />
+    <Content Include="Templates\Forside.html" />
+    <Content Include="Templates\Galleri.html" />
+    <Content Include="Templates\Kontakt.html" />
+    <Content Include="Templates\Login.html" />
+    <Content Include="Templates\Nyhed.html" />
+    <Content Include="Templates\Nyheder.html" />
+    <Content Include="Templates\Sponsorer.html" />
+    <Content Include="Templates\Udlejning.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -307,8 +327,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\Custom\" />
-    <Folder Include="Templates\" />
     <Folder Include="Views\Nyheder\" />
   </ItemGroup>
   <ItemGroup>
