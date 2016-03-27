@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KAEDBStoreContainer" CdmEntityContainer="KAEDBContainer">
+    <EntitySetMapping Name="AdministratorSet1">
+      <EntityTypeMapping TypeName="IsTypeOf(KAEDB.AdministratorSet)">
+        <MappingFragment StoreEntitySet="AdministratorSet1">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForeningsTagSet1">
+      <EntityTypeMapping TypeName="IsTypeOf(KAEDB.ForeningsTagSet)">
+        <MappingFragment StoreEntitySet="ForeningsTagSet1">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Navn" ColumnName="Navn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NyhedSet1">
+      <EntityTypeMapping TypeName="IsTypeOf(KAEDB.NyhedSet)">
+        <MappingFragment StoreEntitySet="NyhedSet1">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Titel" ColumnName="Titel" />
+          <ScalarProperty Name="Dato" ColumnName="Dato" />
+          <ScalarProperty Name="Tekst" ColumnName="Tekst" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="NyhedForeningsTag1" TypeName="KAEDB.NyhedForeningsTag1" StoreEntitySet="NyhedForeningsTag1">
+      <EndProperty Name="ForeningsTagSet">
+        <ScalarProperty Name="Id" ColumnName="ForeningsTagSet_Id" />
+      </EndProperty>
+      <EndProperty Name="NyhedSet">
+        <ScalarProperty Name="Id" ColumnName="NyhedSet_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

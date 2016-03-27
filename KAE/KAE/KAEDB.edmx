@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KAEDB.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="KAEDBStoreContainer">
+    <EntitySet Name="AdministratorSet1" EntityType="KAEDB.Store.AdministratorSet1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ForeningsTagSet1" EntityType="KAEDB.Store.ForeningsTagSet1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NyhedSet1" EntityType="KAEDB.Store.NyhedSet1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NyhedForeningsTag1" EntityType="KAEDB.Store.NyhedForeningsTag1" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_NyhedForeningsTag1_ForeningsTagSet" Association="KAEDB.Store.FK_NyhedForeningsTag1_ForeningsTagSet">
+      <End Role="ForeningsTagSet" EntitySet="ForeningsTagSet1" />
+      <End Role="NyhedForeningsTag1" EntitySet="NyhedForeningsTag1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NyhedForeningsTag1_NyhedSet" Association="KAEDB.Store.FK_NyhedForeningsTag1_NyhedSet">
+      <End Role="NyhedSet" EntitySet="NyhedSet1" />
+      <End Role="NyhedForeningsTag1" EntitySet="NyhedForeningsTag1" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AdministratorSet1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="longtext" Nullable="false" />
+    <Property Name="Password" Type="longtext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ForeningsTagSet1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Navn" Type="longtext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NyhedSet1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titel" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Dato" Type="datetime" Nullable="false" />
+    <Property Name="Tekst" Type="longtext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NyhedForeningsTag1">
+    <Key>
+      <PropertyRef Name="ForeningsTagSet_Id" />
+      <PropertyRef Name="NyhedSet_Id" />
+    </Key>
+    <Property Name="ForeningsTagSet_Id" Type="int" Nullable="false" />
+    <Property Name="NyhedSet_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_NyhedForeningsTag1_ForeningsTagSet">
+    <End Role="ForeningsTagSet" Type="KAEDB.Store.ForeningsTagSet1" Multiplicity="1" />
+    <End Role="NyhedForeningsTag1" Type="KAEDB.Store.NyhedForeningsTag1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ForeningsTagSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NyhedForeningsTag1">
+        <PropertyRef Name="ForeningsTagSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NyhedForeningsTag1_NyhedSet">
+    <End Role="NyhedForeningsTag1" Type="KAEDB.Store.NyhedForeningsTag1" Multiplicity="*" />
+    <End Role="NyhedSet" Type="KAEDB.Store.NyhedSet1" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="NyhedSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NyhedForeningsTag1">
+        <PropertyRef Name="NyhedSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="KAEDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="KAEDBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdministratorSet1" EntityType="KAEDB.AdministratorSet" />
+          <EntitySet Name="ForeningsTagSet1" EntityType="KAEDB.ForeningsTagSet" />
+          <EntitySet Name="NyhedSet1" EntityType="KAEDB.NyhedSet" />
+          <AssociationSet Name="NyhedForeningsTag1" Association="KAEDB.NyhedForeningsTag1">
+            <End Role="ForeningsTagSet" EntitySet="ForeningsTagSet1" />
+            <End Role="NyhedSet" EntitySet="NyhedSet1" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AdministratorSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ForeningsTagSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Navn" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NyhedSet" Relationship="KAEDB.NyhedForeningsTag1" FromRole="ForeningsTagSet" ToRole="NyhedSet" />
+        </EntityType>
+        <EntityType Name="NyhedSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dato" Type="DateTime" Nullable="false" />
+          <Property Name="Tekst" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ForeningsTagSet" Relationship="KAEDB.NyhedForeningsTag1" FromRole="NyhedSet" ToRole="ForeningsTagSet" />
+        </EntityType>
+        <Association Name="NyhedForeningsTag1">
+          <End Type="KAEDB.ForeningsTagSet" Role="ForeningsTagSet" Multiplicity="*" />
+          <End Type="KAEDB.NyhedSet" Role="NyhedSet" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KAEDBStoreContainer" CdmEntityContainer="KAEDBContainer">
+    <EntitySetMapping Name="AdministratorSet1">
+      <EntityTypeMapping TypeName="IsTypeOf(KAEDB.AdministratorSet)">
+        <MappingFragment StoreEntitySet="AdministratorSet1">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForeningsTagSet1">
+      <EntityTypeMapping TypeName="IsTypeOf(KAEDB.ForeningsTagSet)">
+        <MappingFragment StoreEntitySet="ForeningsTagSet1">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Navn" ColumnName="Navn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NyhedSet1">
+      <EntityTypeMapping TypeName="IsTypeOf(KAEDB.NyhedSet)">
+        <MappingFragment StoreEntitySet="NyhedSet1">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Titel" ColumnName="Titel" />
+          <ScalarProperty Name="Dato" ColumnName="Dato" />
+          <ScalarProperty Name="Tekst" ColumnName="Tekst" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="NyhedForeningsTag1" TypeName="KAEDB.NyhedForeningsTag1" StoreEntitySet="NyhedForeningsTag1">
+      <EndProperty Name="ForeningsTagSet">
+        <ScalarProperty Name="Id" ColumnName="ForeningsTagSet_Id" />
+      </EndProperty>
+      <EndProperty Name="NyhedSet">
+        <ScalarProperty Name="Id" ColumnName="NyhedSet_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToMySQL.tt" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

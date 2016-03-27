@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="KAEDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="KAEDBContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdministratorSet1" EntityType="KAEDB.AdministratorSet" />
+    <EntitySet Name="ForeningsTagSet1" EntityType="KAEDB.ForeningsTagSet" />
+    <EntitySet Name="NyhedSet1" EntityType="KAEDB.NyhedSet" />
+    <AssociationSet Name="NyhedForeningsTag1" Association="KAEDB.NyhedForeningsTag1">
+      <End Role="ForeningsTagSet" EntitySet="ForeningsTagSet1" />
+      <End Role="NyhedSet" EntitySet="NyhedSet1" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AdministratorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ForeningsTagSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Navn" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="NyhedSet" Relationship="KAEDB.NyhedForeningsTag1" FromRole="ForeningsTagSet" ToRole="NyhedSet" />
+  </EntityType>
+  <EntityType Name="NyhedSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dato" Type="DateTime" Nullable="false" />
+    <Property Name="Tekst" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ForeningsTagSet" Relationship="KAEDB.NyhedForeningsTag1" FromRole="NyhedSet" ToRole="ForeningsTagSet" />
+  </EntityType>
+  <Association Name="NyhedForeningsTag1">
+    <End Type="KAEDB.ForeningsTagSet" Role="ForeningsTagSet" Multiplicity="*" />
+    <End Type="KAEDB.NyhedSet" Role="NyhedSet" Multiplicity="*" />
+  </Association>
+</Schema>
