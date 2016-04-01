@@ -10,7 +10,7 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
           $scope.Nyhed = data;
           console.log("Nyhed loaded");
           
-          
+                                      
       }
       else
       {
@@ -22,7 +22,6 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
     })
   }
   $scope.readNyheder();
-  console.log($location.url());
   
    //Update nyhed
   $scope.updateNyhed = function() {
@@ -53,7 +52,7 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
       if(data.status === "success")
       {
         console.log("Nyhed er blevet slettet");
-        $scope.gotoNyhed();
+        $scope.gotoNyheder();
       }
       else
       {
@@ -67,12 +66,14 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
   }
   
   //Gå tilbage til nyhedsoversigten nyhed med id
-  $scope.gotoNyheder = function (nyheder) {
+  $scope.gotoNyheder = function () {
     $location.url("/Nyheder");
   }
   
   $scope.gotoUpdateNyhed = function (nyheder) {
       $location.url($location.url() +"/Update");
   }
+  
+  
   
 }]);

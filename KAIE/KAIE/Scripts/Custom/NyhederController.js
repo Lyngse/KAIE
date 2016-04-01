@@ -95,4 +95,8 @@ app.controller('NyhederController', ['$scope', '$http', '$location', '$rootScope
     $location.url("/Nyheder/" + nyheder.Id);
   }
   
+  $scope.gotoCreateNyhed = function() {
+      $location.url("/CreateNyhed");
+  }
+  
 }]);
