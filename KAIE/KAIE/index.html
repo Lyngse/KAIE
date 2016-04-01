@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,47 +8,110 @@
     <meta name="author" content="">
 
     <title>Klinkby Alt-I-Et</title>
-    <!--<link rel="icon" href="Images/title.ico" type="image/x-icon">-->
+    <!--<link rel="icon" href="Images/title.ico" type="image/x-icon"> -->
 
     <!-- Bootstrap Core CSS -->
     <link href="Content/bootstrap.css" rel="stylesheet">
     <link href="Content/Site.css" rel="stylesheet">  
-
+    
+    <link rel="stylesheet" type="text/css" href="CSS/Styles.css">
 </head>
 
 <body ng-app="KAIE">
 
-    <!-- Navigation -->
-
-    <!-- Page Content -->
-    <div class="content">
-      <ng-view></ng-view>
-    </div>
-
-    <!-- jQuery  -->
-    <script src="Scripts/jquery-2.2.2.min.js"></script>
-    <script src="Scripts/jquery.validate.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/moment.min.js"></script>
-    <script src="Scripts/angular.min.js"></script>
-    <script src="Scripts/angular-route.min.js"></script>
-    <script src="Scripts/angular-animate.min.js"></script>
-    <script src="Scripts/ui-bootstrap-tpls-0.14.3.min.js"></script>
-    <script src="Scripts/angular-file-upload.min.js"></script>
-    <script src="Scripts/respond.min.js"></script>
+    <div class="container">
     
-    <!-- Own scripts -->
-    <script src="Scripts/Custom/app.js"></script>
-    <script src="Scripts/Custom/ForsideController.js"></script>
-    <script src="Scripts/Custom/NyhederController.js"></script>
-    <script src="Scripts/Custom/NyhedController.js"></script>
+        <header id="headerimg2">
+            <h1>Klinkby ALT-I-ET</h1>
+            <div class="phonefix">
+                <img id="phone" src="Images/phone.png">
+                <h2>29 63 85 27</h2>
+            </div>
+        </header>    
+    
+       <!-- Navigation -->
+        <nav class="menu">
+            <ul class="menuul">
+                <a class="links" href="#"><li class="menuli">Forside</li></a>
+                <a class="links" href="#"><li class="menuli">Nyheder</li></a>
+                <a class="links" href="#"><li class="menuli">Galleri</li></a>
+                <a class="links" href="#"><li class="menuli">Sponsorer</li></a>
+                <a class="links" href="#"><li class="menuli">Foreninger</li></a>
+                <a class="links" href="#"><li class="menuli">Kontakt</li></a>
+                <li id="linkfix"></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <img class="klinkbyhallen" src="Images/klinkbyhallen.jpg">
+            
+            <!-- Page Content -->
+            <div class="content">
+              <ng-view></ng-view>
+            </div>
+            
+            <!-- jQuery Version 1.11.1 -->
+            <script src="Scripts/jquery-2.2.1.min.js"></script>
+            <script src="Scripts/jquery.validate.min.js"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="Scripts/bootstrap.min.js"></script>
+            <script src="Scripts/moment.min.js"></script>
+            <script src="Scripts/angular.min.js"></script>
+            <script src="Scripts/angular-route.min.js"></script>
+            <script src="Scripts/angular-animate.min.js"></script>
+            <script src="Scripts/ui-bootstrap-tpls-0.14.3.min.js"></script>
+            <script src="Scripts/angular-file-upload.min.js"></script>
+            <script src="Scripts/respond.min.js"></script>
+
+            <!-- Own scripts -->
+            <script src="Scripts/Custom/app.js"></script>
+            <script src="Scripts/Custom/ForsideController.js"></script>
+
+        </main>
+        
+        <!-- Footer --> 
+        <footer id="footer">
+            
+            <div class="footerleft">
+                <ul class="footerul">
+                    <li class="footerli"><a class="footerlinks" href="#">NYHEDER</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Gymnastikforening</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Boldklub</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Andet</a></li>
+                </ul>
+                <ul class="footerul">
+                    <li class="footerli"><a class="footerlinks" href="#">GALLERI</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Gymnastikforening</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Boldklub</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Andet</a></li>
+                </ul>
+                <ul class="footerul">
+                    <li class="footerli"><a class="footerlinks" href="#">FORENINGER</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Gymnastikforening</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Boldklub</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Andet</a></li>
+                </ul>
+                <ul class="footerul">
+                    <li class="footerli"><a class="footerlinks" href="#">KONTAKT</a></li>
+
+                    <div id="footerright">         
+                        <p class="footerp">Klinkby</p>
+                        <p class="footerp">Nejrupvej 2</p>
+                        <p class="footerp">7620 Lemvig</p>
+                        <p class="footerp">Tlf.: 29638527</p>
+                    </div>
+                </ul>
+            </div>
+
+            
+            <!--- <div id="googlemaps" class="col-md-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2198.9057436859844!2d8.225106316095289!3d56.555478380775675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464a22017d7a4a41%3A0x7d474e54f75c4406!2sNejrupvej+2%2C+7620+Lemvig!5e0!3m2!1sda!2sdk!4v1459352774448" width="290px" height="290px" frameborder="0" style="border:0" allowfullscreen></iframe> 
+            </div> --->
+            
+        </footer>
+        
+    </div>
     
 </body>
-
-<footer class="footer">
-  
-</footer>
-
 </html>

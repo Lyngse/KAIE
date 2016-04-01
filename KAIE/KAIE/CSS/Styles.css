@@ -1,0 +1,351 @@
+@font-face {
+    font-family: BebasNeue;
+    src: url(../fonts/BebasNeue.otf);
+}
+
+body{
+    background-image: url(../Images/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    font-family: sans-serif;
+}
+
+#wrapper{
+    width: 80%;
+    min-height: 1000px;
+    margin: -50px auto 0 auto;
+    background-color: #fff;
+    box-shadow: -12px 0 20px -8px #000, 12px 0 20px -8px #000;
+}
+
+#headerimg2{
+    background-image: url(../Images/Header.jpg);
+    width: 100%;
+    min-height: 100px;
+    padding: 10% 20%; 
+}
+
+h1{
+    font-family: BebasNeue;  
+    font-size: 350%;
+    float: left;
+    margin: 1.2% 0 0 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+#phone{
+    width: 28.5px;
+    height: 38.5px;
+    margin: 1.4% 4% 0 0;
+    float: left;
+}
+
+h2{
+    font-family: BebasNeue;  
+    font-size: 200%;
+    margin: 3% 0 0 0;
+    color: #fff;
+    float: left;
+    text-align: center;
+}
+
+.menu{
+    width: 100%;
+    min-height: 50px;
+    overflow: hidden;
+    border: 2px solid #741919;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: -moz-linear-gradient(top,  #993535 0%, #9a1e1e 76%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #993535 0%,#9a1e1e 76%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #993535 0%,#9a1e1e 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#993535', endColorstr='#9a1e1e',GradientType=0 ); /* IE6-9 */
+    box-shadow: inset 0 -1px 3px rgba(0,0,0,0.5), /*bottom internal shadow*/ inset 0 1px 3px rgba(255,255,255,0.8); /*top internal highlight*/
+
+}
+
+.menuul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    
+}
+.menuli{
+    float: left;
+    margin-top: 2px;
+    padding-left: 20px;
+    padding-top: 7px;
+    padding-right: 20px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.links{
+    text-decoration: none;
+    text-align: center;
+    font-family: BebasNeue;  
+    font-size: 24px;
+    color: #d4d4d4;
+}
+
+.links:hover{
+    text-decoration: none;
+    text-align: center;
+    font-family: BebasNeue;  
+    font-size: 24px;
+    color: #d4d4d4;
+}
+
+#linkfix{
+    float: left;
+    height: 41px;
+    padding-left: 20px;
+    padding-top: 7px;
+    padding-right: 20px;
+    border-right: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.menu ul li:hover{
+    background: -moz-linear-gradient(top,  #9a1e1e 0%, #993535 76%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #993535 0%,#9a1e1e 76%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #b32222 0%,#d92929 76%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a1e1e', endColorstr='#993535',GradientType=0 ); /* IE6-9 */
+    
+}
+
+main{
+    padding: 20px 20px 0 20px;
+}
+
+.klinkbyhallen{
+    width: 100%;
+    border: 2px solid #ccc;
+}
+
+.content{
+    height: 800px;
+}
+
+#footer{
+    min-height: 340px;
+    overflow: hidden;
+    background-image: url(../Images/footer.jpg);
+    border-top: 5px solid #9a1e1e;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+
+.footerlinks{
+    text-decoration: none;  
+    font-size: 14px;
+    font-weight: bold;
+    color: #4f4f4f;    
+}
+
+.footerlinks:hover{
+    color: #d4d4d4;
+    text-decoration: none;
+}
+
+.footersublinks{
+    text-decoration: none; 
+    font-size: 12px;
+    color: #4f4f4f; 
+    font-weight: bold;
+}
+
+.footersublinks:hover{
+    color: #d4d4d4;
+    text-decoration: none;    
+}
+
+.footerul{
+    list-style: none;
+    margin: 0 20px 0 0;
+    padding: 0;
+    float: left;
+    width: 20%;
+}
+
+.footerli{
+    margin-bottom: 30px;
+}    
+
+.footersubli{
+    border-top: 1px solid #333333;
+    padding-bottom: 8px;   
+    padding-top: 8px;
+
+}
+
+#googlemaps{
+    float: left;
+
+}
+
+.footerp{
+    border-top: 1px solid #333333;
+    padding-top: 8px;
+    color: #8f8f8f;
+    font-size: 12px;
+
+}
+
+
+
+
+.phonefix{
+    width: 140px;
+    float: right;
+    margin: 1.3% 0 0 0;
+    
+}
+
+
+.footerleft{
+    width: 70%;
+}
+
+.container{
+    width: 80%;
+    padding: 0;
+    background-color: #fff;
+    min-height: 800px;
+    margin-top: -50px;
+    box-shadow: -12px 0 20px -8px #000, 12px 0 20px -8px #000;
+}
+
+#headerimg2{
+    background-image: url(../Images/Header.jpg);
+    width: 100%;
+    min-height: 100px;
+    overflow: hidden;
+    padding: 10px 20px 10px 20px;  
+}
+
+
+@media only screen and (min-width: 501px) and (max-width: 920px){
+    
+    .container{
+        width: 90%;
+    }
+    
+    #headerimg2{
+        width: 100%;
+        min-height: 50px;
+    }
+    
+    h1{
+        font-size: 264%;
+        margin: 1% 0 0 0;
+    }
+    
+    .phonefix{
+        width: 110px;
+        float: right;
+        margin: 1.3% 0 0 0;
+    }
+    
+    #phone{
+        width: 20.5px;
+        height: 27.5px;
+        margin: 1.4% 4% 0 0;
+    }
+    
+    h2{
+        font-size: 150%;
+        margin: 3% 0 0 0;
+    }
+    
+    .menuli{
+        margin-top: 2px;
+        padding-left: 20px;
+        padding-top: 7px;
+        padding-right: 20px;
+        width: 50%;
+        text-align: center;
+    }
+    #linkfix{
+        float: left;
+        height: 1px;
+        padding-left: 20px;
+        padding-top: 7px;
+        padding-right: 20px;
+
+    }
+    
+    .footerleft{
+        width: 60%;
+    }   
+    
+    .footerul{
+        list-style: none;
+        margin: 20px 20px 0 0;
+        padding: 0;
+        float: left;
+        width: 40%;
+    }
+
+}
+
+@media only screen and (min-width: 150px) and (max-width: 500px){
+   
+    .container{
+        width: 100%;
+    }
+    
+    #headerimg2{
+        width: 100%;
+        min-height: 30px;
+        align-content: center;
+    }
+    
+    h1{
+        font-size: 220%;
+        margin: 1% 0 0 0;
+        text-align: center;
+        float: none;
+    }
+    
+    .phonefix{
+        width: 120px;
+        float: right;
+        margin: 1.3% 0 0 30%;
+        float: none;
+
+    }
+    
+    #phone{
+        width: 17px;
+        height: 23px;
+        margin: 1.4% 4% 0 0;
+    }
+    
+    h2{
+        font-size: 120%;
+        margin: 3% 0 0 0;
+        text-align: center;
+    }  
+    
+    .menuli{
+        margin-top: 2px;
+        padding-left: 20px;
+        padding-top: 7px;
+        padding-right: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    #linkfix{
+        float: left;
+        height: 1px;
+        padding-left: 20px;
+        padding-top: 7px;
+        padding-right: 20px;
+
+    }
+}
