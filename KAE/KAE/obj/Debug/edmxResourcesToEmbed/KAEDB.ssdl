@@ -2,17 +2,7 @@
 <Schema Namespace="KAEDB.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="KAEDBStoreContainer">
     <EntitySet Name="AdministratorSet1" EntityType="KAEDB.Store.AdministratorSet1" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ForeningsTagSet1" EntityType="KAEDB.Store.ForeningsTagSet1" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="NyhedSet1" EntityType="KAEDB.Store.NyhedSet1" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="NyhedForeningsTag1" EntityType="KAEDB.Store.NyhedForeningsTag1" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_NyhedForeningsTag1_ForeningsTagSet" Association="KAEDB.Store.FK_NyhedForeningsTag1_ForeningsTagSet">
-      <End Role="ForeningsTagSet" EntitySet="ForeningsTagSet1" />
-      <End Role="NyhedForeningsTag1" EntitySet="NyhedForeningsTag1" />
-    </AssociationSet>
-    <AssociationSet Name="FK_NyhedForeningsTag1_NyhedSet" Association="KAEDB.Store.FK_NyhedForeningsTag1_NyhedSet">
-      <End Role="NyhedSet" EntitySet="NyhedSet1" />
-      <End Role="NyhedForeningsTag1" EntitySet="NyhedForeningsTag1" />
-    </AssociationSet>
   </EntityContainer>
   <EntityType Name="AdministratorSet1">
     <Key>
@@ -22,13 +12,6 @@
     <Property Name="Username" Type="longtext" Nullable="false" />
     <Property Name="Password" Type="longtext" Nullable="false" />
   </EntityType>
-  <EntityType Name="ForeningsTagSet1">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Navn" Type="longtext" Nullable="false" />
-  </EntityType>
   <EntityType Name="NyhedSet1">
     <Key>
       <PropertyRef Name="Id" />
@@ -37,37 +20,6 @@
     <Property Name="Titel" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="Dato" Type="datetime" Nullable="false" />
     <Property Name="Tekst" Type="longtext" Nullable="false" />
+    <Property Name="Forfatter" Type="longtext" Nullable="false" />
   </EntityType>
-  <EntityType Name="NyhedForeningsTag1">
-    <Key>
-      <PropertyRef Name="ForeningsTagSet_Id" />
-      <PropertyRef Name="NyhedSet_Id" />
-    </Key>
-    <Property Name="ForeningsTagSet_Id" Type="int" Nullable="false" />
-    <Property Name="NyhedSet_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <Association Name="FK_NyhedForeningsTag1_ForeningsTagSet">
-    <End Role="ForeningsTagSet" Type="KAEDB.Store.ForeningsTagSet1" Multiplicity="1" />
-    <End Role="NyhedForeningsTag1" Type="KAEDB.Store.NyhedForeningsTag1" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ForeningsTagSet">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="NyhedForeningsTag1">
-        <PropertyRef Name="ForeningsTagSet_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_NyhedForeningsTag1_NyhedSet">
-    <End Role="NyhedForeningsTag1" Type="KAEDB.Store.NyhedForeningsTag1" Multiplicity="*" />
-    <End Role="NyhedSet" Type="KAEDB.Store.NyhedSet1" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="NyhedSet">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="NyhedForeningsTag1">
-        <PropertyRef Name="NyhedSet_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

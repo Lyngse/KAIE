@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KAIEDB.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="KAIEDBStoreContainer">
+    <EntitySet Name="NyhederSet" EntityType="KAIEDB.Store.NyhederSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AdministratorSet" EntityType="KAIEDB.Store.AdministratorSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="NyhederSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titel" Type="longtext" Nullable="false" />
+    <Property Name="Dato" Type="datetime" Nullable="false" />
+    <Property Name="Forfatter" Type="longtext" Nullable="false" />
+    <Property Name="Tekst" Type="longtext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdministratorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brugernavn" Type="longtext" Nullable="false" />
+    <Property Name="Kodeord" Type="longtext" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="KAIEDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="KAIEDBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NyhederSet" EntityType="KAIEDB.Nyheder" />
+          <EntitySet Name="AdministratorSet" EntityType="KAIEDB.Administrator" />
+        </EntityContainer>
+        <EntityType Name="Nyheder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titel" Type="String" Nullable="false" />
+          <Property Name="Dato" Type="DateTime" Nullable="false" />
+          <Property Name="Forfatter" Type="String" Nullable="false" />
+          <Property Name="Tekst" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Administrator">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Brugernavn" Type="String" Nullable="false" />
+          <Property Name="Kodeord" Type="String" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KAIEDBStoreContainer" CdmEntityContainer="KAIEDBContainer">
+    <EntitySetMapping Name="NyhederSet">
+      <EntityTypeMapping TypeName="IsTypeOf(KAIEDB.Nyheder)">
+        <MappingFragment StoreEntitySet="NyhederSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Titel" ColumnName="Titel" />
+          <ScalarProperty Name="Dato" ColumnName="Dato" />
+          <ScalarProperty Name="Forfatter" ColumnName="Forfatter" />
+          <ScalarProperty Name="Tekst" ColumnName="Tekst" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(KAIEDB.Administrator)">
+        <MappingFragment StoreEntitySet="AdministratorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Brugernavn" ColumnName="Brugernavn" />
+          <ScalarProperty Name="Kodeord" ColumnName="Kodeord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToMySQL.tt" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

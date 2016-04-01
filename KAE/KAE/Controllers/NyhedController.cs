@@ -14,19 +14,19 @@ namespace KAE.Controllers
         public ActionResult Read(int id)
         {
             NyhedSet n = db.NyhedSet1.Find(id);
-            List<object> nyhed = new List<object>();
 
-            object obj = new { status = "success", Id = n.Id, Titel = n.Titel, Dato = n.Dato, Tekst = n.Tekst };
+            object obj = new { status = "success", Id = n.Id, Titel = n.Titel, Dato = n.Dato, Tekst = n.Tekst, Forfatter = n.Forfatter };
             return Json(obj, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public ActionResult Create(string titel, string tekst, DateTime dato, List<ForeningsTagSet> ftList)
+        public ActionResult Create(string titel, string tekst, string forfatter)
         {
             try
             {
-                dato = DateTime.Now;
-                NyhedSet n = db.NyhedSet1.Add(new NyhedSet() { Titel = titel, Tekst = tekst, Dato = dato, ForeningsTagSet = ftList });
+                DateTime dato = DateTime.Now;
+                NyhedSet n = db.NyhedSet1.Add(new NyhedSet() { Titel = titel, Tekst = tekst, Forfatter = forfatter, Dato = dato });
+
 
                 db.SaveChanges();
 
@@ -41,23 +41,15 @@ namespace KAE.Controllers
 
         [HttpPost]
         //Skal parameter id'et se ud som i databasen?? Også de andre parametre fro den sags skyld.
-        public ActionResult Update(int id, string titel, string tekst, List<ForeningsTagSet> ftList)
+        public ActionResult Update(int id, string titel, string tekst, string forfatter)
         {
             try
             {
                 NyhedSet n = db.NyhedSet1.Find(id);
-                List<ForeningsTagSet> newFtList = new List<ForeningsTagSet>();
-
-                for(int i = 0; i < ftList.Count; i++)
-                {
-                    newFtList.Add(ftList[i]);
-                }
-
-                db.ForeningsTagSet1.RemoveRange(n.ForeningsTagSet);
 
                 n.Titel = titel;
                 n.Tekst = tekst;
-                n.ForeningsTagSet = newFtList;
+                n.Forfatter = forfatter;
 
                 db.Entry(n).State = EntityState.Modified;
                 db.SaveChanges();

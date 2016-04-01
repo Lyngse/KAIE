@@ -14,18 +14,10 @@ namespace KAE
     
     public partial class NyhedSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NyhedSet()
-        {
-            this.ForeningsTagSet = new HashSet<ForeningsTagSet>();
-        }
-    
         public int Id { get; set; }
         public string Titel { get; set; }
         public System.DateTime Dato { get; set; }
         public string Tekst { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ForeningsTagSet> ForeningsTagSet { get; set; }
+        public string Forfatter { get; set; }
     }
 }

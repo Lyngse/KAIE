@@ -10,14 +10,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ForeningsTagSet1">
-      <EntityTypeMapping TypeName="IsTypeOf(KAEDB.ForeningsTagSet)">
-        <MappingFragment StoreEntitySet="ForeningsTagSet1">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Navn" ColumnName="Navn" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="NyhedSet1">
       <EntityTypeMapping TypeName="IsTypeOf(KAEDB.NyhedSet)">
         <MappingFragment StoreEntitySet="NyhedSet1">
@@ -25,16 +17,9 @@
           <ScalarProperty Name="Titel" ColumnName="Titel" />
           <ScalarProperty Name="Dato" ColumnName="Dato" />
           <ScalarProperty Name="Tekst" ColumnName="Tekst" />
+          <ScalarProperty Name="Forfatter" ColumnName="Forfatter" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="NyhedForeningsTag1" TypeName="KAEDB.NyhedForeningsTag1" StoreEntitySet="NyhedForeningsTag1">
-      <EndProperty Name="ForeningsTagSet">
-        <ScalarProperty Name="Id" ColumnName="ForeningsTagSet_Id" />
-      </EndProperty>
-      <EndProperty Name="NyhedSet">
-        <ScalarProperty Name="Id" ColumnName="NyhedSet_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

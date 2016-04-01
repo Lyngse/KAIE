@@ -10,11 +10,23 @@ app.config(['$routeProvider', function ($routeProvider) {
       templateUrl: 'Templates/Nyheder.html',
       controller: 'NyhederController'
     }).
+    when('/Nyheder/:nyhederId', {
+      templateUrl: 'Templates/Nyhed.html',
+      controller: 'NyhederController'
+    }).
+    when('/NyNyhed', {
+      templateUrl: 'Templates/NyNyhed.html',
+      controller: 'NyhederController'
+    }).
     otherwise({
       redirectTo: '/'
     });
 }]);
 
 app.run(function ($rootScope, $http, $routeParams, $route) {
-  $rootScope.apiUrl = "http://sorenlyng.dk";
+    $rootScope.apiUrl = "http://sorenlyng.dk";
+    
+    //Bruges til at teste med!
+    /*$rootScope.apiUrl = "http://localhost:54565";*/
 });
+

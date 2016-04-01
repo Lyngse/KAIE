@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KAIEDB.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="KAIEDBStoreContainer">
+    <EntitySet Name="NyhederSet" EntityType="KAIEDB.Store.NyhederSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AdministratorSet" EntityType="KAIEDB.Store.AdministratorSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="NyhederSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titel" Type="longtext" Nullable="false" />
+    <Property Name="Dato" Type="datetime" Nullable="false" />
+    <Property Name="Forfatter" Type="longtext" Nullable="false" />
+    <Property Name="Tekst" Type="longtext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdministratorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brugernavn" Type="longtext" Nullable="false" />
+    <Property Name="Kodeord" Type="longtext" Nullable="false" />
+  </EntityType>
+</Schema>
