@@ -1,15 +1,15 @@
-<div class="content">
-  <div class="container">
+<div class="container">
     <div class="row">
-      <ul class="post-grid">
-        <li ng-repeat="nyheder in Nyheder.nList" class="col-s-4" ng-class="{ 'reset-s' : $index%3==0 }">
-          <h3>{{nyheder.Titel}}</h3>
-          <p>{{nyheder.Tekst | limitTo:70}}...</p>
-          <button type="button" ng-click="gotoNyhed(nyheder)"> Læs mere! </button>
-        </li>
-      </ul>
-      <button type="button" ng-click="gotoCreateNyhed()"> Tilføj nyhed! </button>
+        <div class="nyhederBoks" >
+            <ul class="post-grid">
+                <li ng-repeat="nyheder in Nyheder.nList" class="nyhederBokss col-md-4">
+                    <h3 class="nyhederTitel">{{nyheder.Titel}}</h3>
+                    <p class="nyhederTekst">{{nyheder.Tekst | limitTo:130}}...</p>
+                    <button type="button" class="btn btn-info" ng-click="gotoNyhed(nyheder)"> Læs mere! </button>
+                </li>
+            </ul>
+            <button type="button" ng-click="gotoCreateNyhed()"> Tilføj nyhed! </button>
+        </div>
     </div>
-  </div>
 </div>
-Hello?
+

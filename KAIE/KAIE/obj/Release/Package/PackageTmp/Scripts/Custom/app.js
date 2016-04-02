@@ -22,6 +22,10 @@ app.config(['$routeProvider', function ($routeProvider) {
       templateUrl: 'Templates/CreateNyhed.html',
       controller: 'NyhederController'
     }).
+    when('/Sponsorer', {
+      templateUrl: 'Templates/Sponsorer.html',
+      controller: 'RandomController'
+    }).
     otherwise({
       redirectTo: '/'
     });

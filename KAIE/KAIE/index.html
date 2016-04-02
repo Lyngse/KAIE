@@ -12,9 +12,8 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="Content/bootstrap.css" rel="stylesheet">
-    <link href="Content/Site.css" rel="stylesheet">  
+    <link href="Content/Site.css" rel="stylesheet"> 
     
-    <link rel="stylesheet" type="text/css" href="CSS/Styles.css">
 </head>
 
 <body ng-app="KAIE">
@@ -32,18 +31,17 @@
        <!-- Navigation -->
         <nav class="menu">
             <ul class="menuul">
-                <a class="links" href="#"><li class="menuli">Forside</li></a>
-                <a class="links" href="#"><li class="menuli">Nyheder</li></a>
-                <a class="links" href="#"><li class="menuli">Galleri</li></a>
-                <a class="links" href="#"><li class="menuli">Sponsorer</li></a>
-                <a class="links" href="#"><li class="menuli">Foreninger</li></a>
-                <a class="links" href="#"><li class="menuli">Kontakt</li></a>
+                <a class="links" ng-href="#"><li class="menuli">Forside</li></a>
+                <a class="links" ng-href="http://sorenlyng.dk/#/Nyheder"><li class="menuli">Nyheder</li></a>
+                <a class="links" ng-href="#"><li class="menuli">Galleri</li></a>
+                <a class="links" ng-href="http://sorenlyng.dk/#/Sponsorer"><li class="menuli">Sponsorer</li></a>
+                <a class="links" ng-href="#"><li class="menuli">Foreninger</li></a>
+                <a class="links" ng-href="#"><li class="menuli">Kontakt</li></a>
                 <li id="linkfix"></li>
             </ul>
         </nav>
         
         <main>
-            <img class="klinkbyhallen" src="Images/klinkbyhallen.jpg">
             
             <!-- Page Content -->
             <div class="content">
@@ -51,7 +49,7 @@
             </div>
             
             <!-- jQuery Version 1.11.1 -->
-            <script src="Scripts/jquery-2.2.1.min.js"></script>
+            <script src="Scripts/jquery-2.2.2.min.js"></script>
             <script src="Scripts/jquery.validate.min.js"></script>
 
             <!-- Bootstrap Core JavaScript -->
@@ -67,6 +65,9 @@
             <!-- Own scripts -->
             <script src="Scripts/Custom/app.js"></script>
             <script src="Scripts/Custom/ForsideController.js"></script>
+            <script src="Scripts/Custom/NyhederController.js"></script>
+            <script src="Scripts/Custom/NyhedController.js"></script>
+            <script src="Scripts/Custom/RandomController.js"></script>
 
         </main>
         

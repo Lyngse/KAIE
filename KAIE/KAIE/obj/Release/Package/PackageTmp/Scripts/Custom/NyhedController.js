@@ -8,9 +8,7 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
       if(data.status ==="success")
       {
           $scope.Nyhed = data;
-          console.log("Nyhed loaded");
-          
-          
+          console.log("Nyhed loaded");                                      
       }
       else
       {
@@ -22,7 +20,6 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
     })
   }
   $scope.readNyheder();
-  console.log($location.url());
   
    //Update nyhed
   $scope.updateNyhed = function() {
@@ -74,7 +71,5 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
   $scope.gotoUpdateNyhed = function (nyheder) {
       $location.url($location.url() +"/Update");
   }
-  
-  
-  
+
 }]);
