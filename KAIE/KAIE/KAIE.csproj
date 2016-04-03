@@ -310,6 +310,7 @@
     <Content Include="Scripts\Custom\ForsideController.js" />
     <Content Include="Scripts\Custom\NyhedController.js" />
     <Content Include="Scripts\Custom\NyhederController.js" />
+    <Content Include="Scripts\Custom\NyhedsDashboardController.js" />
     <Content Include="Scripts\Custom\RandomController.js" />
     <Content Include="Scripts\jquery-2.2.2.js" />
     <Content Include="Scripts\jquery-2.2.2.min.js" />
@@ -326,7 +327,6 @@
     <Content Include="Scripts\ui-bootstrap-tpls-0.14.3.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Templates\CreateNyhed.html" />
-    <Content Include="Templates\Dashboard.html" />
     <Content Include="Templates\Foreninger.html" />
     <Content Include="Templates\Forside.html" />
     <Content Include="Templates\Galleri.html" />
@@ -334,6 +334,7 @@
     <Content Include="Templates\Login.html" />
     <Content Include="Templates\Nyhed.html" />
     <Content Include="Templates\Nyheder.html" />
+    <Content Include="Templates\NyhedsDashboard.html" />
     <Content Include="Templates\Sponsorer.html" />
     <Content Include="Templates\Udlejning.html" />
     <Content Include="Templates\UpdateNyhed.html" />

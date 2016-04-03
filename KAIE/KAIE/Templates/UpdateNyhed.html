@@ -1,15 +1,13 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <form name="postForm">
-                <h4>Titel</h4>
-                <input type="text" ng-model="Nyhed.Titel" />
-                <h4>Forfatter</h4>
-                <input type="text" ng-model="Nyhed.Forfatter" />
-                <h4>Body</h4>
-                <textarea ng-model="Nyhed.Tekst" rows="10"></textarea>
-                <input type="submit" value="Gem" ng-click="updateNyhed()" />
-            </form>
-        </div>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <form name="postForm">
+            <h4>Titel</h4>
+            <input type="text" ng-model="Nyhed.Titel" />
+            <h4>Forfatter</h4>
+            <input type="text" ng-model="Nyhed.Forfatter" />
+            <h4>Body</h4>
+            <textarea ng-model="Nyhed.Tekst" rows="10"></textarea>
+            <input type="submit" value="Gem" ng-click="updateNyhed()" />
+        </form>
     </div>
 </div>

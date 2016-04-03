@@ -22,6 +22,10 @@ app.config(['$routeProvider', function ($routeProvider) {
       templateUrl: 'Templates/CreateNyhed.html',
       controller: 'NyhederController'
     }).
+    when('/NyhedsDashboard', {
+      templateUrl: 'Templates/NyhedsDashboard.html',
+      controller: 'NyhedsDashboardController'
+    }).
     when('/Sponsorer', {
       templateUrl: 'Templates/Sponsorer.html',
       controller: 'RandomController'

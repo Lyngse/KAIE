@@ -202,7 +202,7 @@ main{
 
 h3{
     font-size: 200%;
-    margin: 0 0 20px; 0;
+    margin: 0 0 20px 0;
     padding: 0;
     text-align: center;
 }
@@ -268,6 +268,131 @@ h3{
     list-style-type: none; 
 }
 
+.sidebar-menu {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    display: block;
+    background-color: #333333;
+    transform: translate3d(-300px, 0, 0);
+    -webkit-transition: transform 0.4s ease;
+    -moz-transition: transform 0.4s ease;
+    transition: transform 0.4s ease;
+}
+
+.sidebar-menu.visible {
+    left: 0px;
+}
+
+.sidebarh3 {
+    font-size: 200%;
+    margin: 30px 0 20px 0;
+    padding: 0;
+    padding-left: 10px;
+    text-align: left;
+    color: white;
+}
+
+.sidebarh5 {
+    font-size: 150%;
+    margin: 0 0 20px 0;
+    padding: 0;
+    padding-left: 10px;
+    text-align: left;
+    color: white;
+}
+
+.active-sidebar .sidebar-menu {
+    transform: translate3d(0, 0, 0);
+}
+
+.sidebarul {
+    list-style: none;
+}
+
+.sidebarli {
+    padding: 0px;
+    margin: 0px;
+    line-height: 50px;
+    cursor: pointer;
+    margin-left: -40px;
+}
+
+.sidebarlinks {
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    color: #fff;
+    padding: 0;
+    font-size: 130%;
+    margin-left: 10px;
+}
+
+.sidebarlinks:visited {
+    text-decoration: none;
+}
+
+.nav-toggle {
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    left: 300px;
+    width: 40px;
+    height: 90px;
+    border-radius: 0 90px 90px 0;
+    -moz-border-radius: 0 90px 90px 0;
+     -webkit-border-radius: 0 90px 90px 0;
+    background-color: #333333;
+    text-align: center;
+    font-size: 200%;
+    color: white;
+}
+
+.nav-toggle a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+#sidebarArrow {
+    margin-top: 31px;
+}
+
+.sidebar-menu li:hover {
+  border-left: 10px solid darkred;
+  background-color: #4f5b69;
+  text-decoration: none;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.sidebar-menu a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.streg {
+    border-bottom: 1px solid #8f8f8f;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container {
+    -webkit-transition: transform 0.4s ease;
+    -moz-transition: transform 0.4s ease;
+    transition: transform 0.4s ease;
+}
+
+.active-sidebar .container {
+    transform: translate3d(300px, 0, 0);
+}
+
+
+
 @media only screen and (min-width: 501px) and (max-width: 920px){
     
     .container{
@@ -332,7 +457,7 @@ h3{
     
     h3{
         font-size: 150%;
-        margin: 0 0 20px; 0;
+        margin: 0 0 20px 0;
         padding: 0;
         text-align: center;
     }
@@ -408,7 +533,7 @@ h3{
     
     h3{
         font-size: 120%;
-        margin: 0 0 20px; 0;
+        margin: 0 0 20px 0;
         padding: 0;
         text-align: center;
     }
