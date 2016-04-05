@@ -46,7 +46,6 @@ namespace KAIE.Controllers
         }
 
         [HttpPost]
-        //Skal parameter id'et se ud som i databasen?? Også de andre parametre fro den sags skyld.
         public ActionResult Update(int id, string titel, string tekst, string forfatter)
         {
                 Nyheder n = db.NyhederSet.Find(id);
