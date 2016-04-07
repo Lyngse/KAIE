@@ -8,7 +8,7 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
       if(data.status ==="success")
       {
           $scope.Nyhed = data;
-          console.log("Nyhed loaded");                                      
+          console.log("Nyhed loaded");                                     
       }
       else
       {
@@ -20,6 +20,26 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
     })
   }
   $scope.readNyheder();
+  
+  //Update nyhed
+  $scope.updateNyhed = function(titel, tekst, forfatter) {
+    $http.post($rootScope.apiUrl + "/Nyheder/Update", { Id: $scope.Nyhed.Id, Titel: titel, Tekst: tekst, Forfatter: forfatter })
+    .success(function(data)
+    {
+      if(data.status === "success")
+      {
+        console.log("Nyhed opdateret");
+      }
+      else
+      {
+        $scope.error = "Nyhed blev ikke opdateret";
+        console.log("Nyhed blev ikke opdateret");
+      }
+    }).error(function(err)
+    {
+      $scope.updateErr = err;
+    })
+  }
   
   //Gå tilbage til nyhedsoversigten nyhed med id
   $scope.gotoNyheder = function () {

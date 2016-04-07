@@ -9,6 +9,8 @@ namespace KAIE.Controllers
 {
     public class AdministratorController : Controller
     {
+        KAIEDBContainer db = new KAIEDBContainer();
+
         public ActionResult Read(int id)
         {
             Nyheder n = db.NyhederSet.Find(id);
