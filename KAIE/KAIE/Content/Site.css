@@ -257,7 +257,6 @@ h3{
 
 /* Used on Contact page*/
 #maincontact{
-    width: 63%;
     min-height: 600px;
 }
 
@@ -272,7 +271,7 @@ h3{
 
 #contactsec{
     width: 600px;
-    height: 600px;
+    height: 550px;
     margin-left: 10px;
     float: left;
 }
@@ -345,6 +344,7 @@ textarea {
     margin: 10px;
 }
 
+<<<<<<< HEAD
 /* Used on Hallen page */
 
 #hallensec1{
@@ -385,6 +385,9 @@ textarea {
 
 
 /* Søren stuff :D */
+=======
+/* Used on Nyheder page */
+>>>>>>> origin/master
 .nyhederBokss{
     margin-top: 20px;
     border-radius: 5px;
@@ -405,6 +408,7 @@ textarea {
     list-style-type: none; 
 }
 
+/* Used for sidebar */
 .sidebar-menu {
     position: fixed;
     z-index: 1000;
@@ -462,10 +466,6 @@ textarea {
     padding: 0;
     font-size: 130%;
     margin-left: 10px;
-}
-
-.sidebarlinks:visited {
-    text-decoration: none;
 }
 
 .nav-toggle {
@@ -634,14 +634,14 @@ textarea {
     
     .menuli{
         margin-top: 2px;
-        padding 7px 20px 0 20px;
+        padding: 7px 20px 0 20px;
         width: 100%;
         text-align: center;
     }
     #linkfix{
         float: left;
         height: 1px;
-        padding 7px 20px 0 20px;
+        padding: 7px 20px 0 20px;
 
     }
     
