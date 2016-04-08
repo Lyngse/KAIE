@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Klinkby Alt-I-Et</title>
+    <!--<link rel="icon" href="Images/title.ico" type="image/x-icon"> -->
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../Content/bootstrap.css" rel="stylesheet">
+    <link href="../Content/Site.css" rel="stylesheet"> 
+    
+</head>
+
+<body ng-app="KAIE">
+    <div class="container">
+    
+        <header id="headerimg2">
+            <h1>Klinkby ALT-I-ET</h1>
+            <div class="phonefix">
+                <img id="phone" src="../Images/phone.png">
+                <h2>29 63 85 27</h2>
+            </div>
+        </header>    
+    
+       <!-- Navigation Mainmenu -->
+        <nav class="menu">
+            <ul class="menuul">
+                <a class="links" ng-href="http://sorenlyng.dk/#/"><li class="menuli">Forside</li></a>
+                <a class="links" ng-href="http://sorenlyng.dk/#/Nyheder"><li class="menuli">Nyheder</li></a>
+                <a class="links" ng-href="#"><li class="menuli">Galleri</li></a>
+                <a class="links" ng-href="http://sorenlyng.dk/#/Sponsorer"><li class="menuli">Sponsorer</li></a>
+                <a class="links" ng-href="#"><li class="menuli">Foreninger</li></a>
+                <a class="links" ng-href="#"><li class="menuli">Kontakt</li></a>
+                <li id="linkfix"></li>
+            </ul>
+        </nav> 
+              
+        <main id="maincontact">
+
+            <h3>Kontakt Information</h3>
+            
+            <section id="contactinfosec">
+                <p>Email: klinkbyhallen@klinkbyhallen.dk</p>
+                <p>Adresse: Nejrupvej 2 7620 Lemvig</p>
+                <p>Telefon nummer: 29638527</p>
+            </section>
+            
+            <section id="contactsec">
+                <form name="contactform" method="post" action="html_form_send.php">
+                    <table width="650px">
+                        <tr class="contactfloat">
+                            <td valign="top">
+                                <input type="text" name="first_name" maxlength="50" size="30" placeholder="Fornavn" class="contactform">
+                            </td>
+                        </tr>
+                        <tr class="contactfloat">
+                            <td valign="top">
+                                <input type="text" name="last_name" maxlength="50" size="30" placeholder="Efternavn" class="contactform">
+                            </td>
+                        </tr>
+                        <tr class="contactfloat">
+                            <td valign="top">
+                                <input type="text" name="email" maxlength="80" size="30" placeholder="Email" class="contactform">
+                            </td>
+                        </tr>
+                       <tr class="contactfloat">
+                            <td valign="top">
+                                <input type="text" name="last_name" maxlength="50" size="30" placeholder="Emne" class="contactform">
+                            </td>
+                        </tr>
+                        <tr class="contactfloat">
+                            <td valign="top">
+                                <textarea name="message" maxlength="1000" cols="25" rows="6" placeholder="Besked" class="contactform"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" id="submitbutton" value="Send mail">
+                            </td>
+                        </tr>
+                    </table>
+            </section> 
+            
+            <section id="googlemapssec">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2198.9057436859844!2d8.225106316095289!3d56.555478380775675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464a22017d7a4a41%3A0x7d474e54f75c4406!2sNejrupvej+2%2C+7620+Lemvig!5e0!3m2!1sda!2sdk!4v1459352774448" width="290px" height="451px" frameborder="0" style="border:0" allowfullscreen></iframe> 
+            </section>
+        
+            
+            <!-- Page Content -->
+            <div class="content">
+              <ng-view></ng-view>
+            </div>
+            
+            <!-- jQuery Version 1.11.1 -->
+            <script src="Scripts/jquery-2.2.2.min.js"></script>
+            <script src="Scripts/jquery.validate.min.js"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="Scripts/bootstrap.min.js"></script>
+            <script src="Scripts/moment.min.js"></script>
+            <script src="Scripts/angular.min.js"></script>
+            <script src="Scripts/angular-route.min.js"></script>
+            <script src="Scripts/angular-animate.min.js"></script>
+            <script src="Scripts/ui-bootstrap-tpls-0.14.3.min.js"></script>
+            <script src="Scripts/angular-file-upload.min.js"></script>
+            <script src="Scripts/respond.min.js"></script>
+
+            <!-- Own scripts -->
+            <script src="Scripts/Custom/app.js"></script>
+            <script src="Scripts/Custom/ForsideController.js"></script>
+            <script src="Scripts/Custom/NyhederController.js"></script>
+            <script src="Scripts/Custom/NyhedController.js"></script>
+            <script src="Scripts/Custom/RandomController.js"></script>
+            <script src="Scripts/Custom/NyhedsDashboardController.js"></script>
+            
+
+        </main>
+        
+        <!-- Footer --> 
+        <footer id="footer">
+            <div class="footerleft">
+                <ul class="footerul">
+                    <li class="footerli"><a class="footerlinks" href="#">NYHEDER</a></li>
+                        <li class="footersubli"><a class="footersublinks" href="#">Gymnastikforening</a></li>
+                        <li class="footersubli"><a class="footersublinks" href="#">Boldklub</a></li>
+                        <li class="footersubli"><a class="footersublinks" href="#">Andet</a></li>
+                </ul>
+                <ul class="footerul">
+                    <li class="footerli"><a class="footerlinks" href="#">GALLERI</a></li>
+                        <li class="footersubli"><a class="footersublinks" href="#">Gymnastikforening</a></li>
+                        <li class="footersubli"><a class="footersublinks" href="#">Boldklub</a></li>
+                        <li class="footersubli"><a class="footersublinks" href="#">Andet</a></li>
+                </ul>
+                <ul class="footerul">
+                    <li class="footerli"><a class="footerlinks" href="#">FORENINGER</a></li>
+                        <li class="footersubli"><a class="footersublinks" href="#">Gymnastikforening</a></li>
+                        <li class="footersubli"><a class="footersublinks" href="#">Boldklub</a></li>
+                        <li class="footersubli"><a class="footersublinks" href="#">Andet</a></li>
+                </ul>
+                <ul class="footerul">
+                    <li class="footerli"><a class="footerlinks" href="#">KONTAKT</a></li>
+
+                    <div id="footerright">         
+                        <p class="footerp">Klinkby</p>
+                        <p class="footerp">Nejrupvej 2</p>
+                        <p class="footerp">7620 Lemvig</p>
+                        <p class="footerp">Tlf.: 29638527</p>
+                    </div>
+                </ul>
+            </div>
+            
+            <!--- <div id="googlemaps" class="col-md-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2198.9057436859844!2d8.225106316095289!3d56.555478380775675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464a22017d7a4a41%3A0x7d474e54f75c4406!2sNejrupvej+2%2C+7620+Lemvig!5e0!3m2!1sda!2sdk!4v1459352774448" width="290px" height="290px" frameborder="0" style="border:0" allowfullscreen></iframe> 
+            </div> --->
+            
+        </footer>        
+    </div>
+        
+</body>
+<!-- Sidebar menu -->
+    
+    <nav class="sidebar-menu">
+        <a ng-href="#" class="nav-toggle"><span class="glyphicon glyphicon-menu-right" id="sidebarArrow" aria-hidden="true"></span></a>
+        <!--<div class="nav-toggle"><span class="glyphicon glyphicon-menu-right" id="sidebarArrow" aria-hidden="true"></span></div>-->
+        <h3 class="sidebarh3">Klinkby Alt-I-Et</h3>
+        <h5 class="sidebarh5">Administrator panel</h5>
+        <div class="streg"></div>
+        
+        <ul class="sidebarul">
+            <li class="sidebarli"><a class="sidebarlinks" ng-href="http://sorenlyng.dk/#/NyhedsDashboard">
+                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                Nyheds Dashboard</a></li>
+            <li class="sidebarli"><a class="sidebarlinks" ng-href="http://sorenlyng.dk/#/CreateNyhed">
+                <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                Tilføj Nyhed</a></li>
+            <li class="sidebarli"><a class="sidebarlinks" ng-href="#">
+                <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                Galleri</a></li>
+            <li class="sidebarli"><a class="sidebarlinks" ng-href="#">
+                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+                Foreningstags</a></li>
+            <li class="sidebarli"><a class="sidebarlinks" ng-href="#">
+                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                Ændre Login Informationer</a></li>
+        </ul>
+        <div class="streg"></div>
+
+        <ul class="sidebarul">
+            <li class="sidebarli"><a class="sidebarlinks" ng-href="#">
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                Log ud
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- Sidebar script -->
+    <script type="text/javascript">
+    (function() {
+        
+        $('.nav-toggle').click(function() {
+            $(this).find('span').toggleClass('glyphicon-menu-right glyphicon-menu-left');
+        });
+        
+        $('.nav-toggle').click(function(e) {
+            e.preventDefault();
+           $('body').toggleClass('active-sidebar');
+        });
+    })();
+    </script>
+</html>
