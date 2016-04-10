@@ -9,21 +9,21 @@
     </section>
     
     <section id="contactsec">
-        <form name="contactform" method="post" action="html_form_send.php">
+        <form name="contactform" method="post">
             <table width="650px">
                 <tr class="contactfloat">
                     <td valign="top">
-                        <input type="text" name="first_name" ng-model="firstname" maxlength="50" size="30" placeholder="Fornavn" class="contactform">
+                        <input type="text" name="first_name" ng-model="fornavn" maxlength="50" size="30" placeholder="Fornavn" class="contactform">
                     </td>
                 </tr>
                 <tr class="contactfloat">
                     <td valign="top">
-                        <input type="text" name="last_name" ng-model="lastname" maxlength="50" size="30" placeholder="Efternavn" class="contactform">
+                        <input type="text" name="last_name" ng-model="efternavn" maxlength="50" size="30" placeholder="Efternavn" class="contactform">
                     </td>
                 </tr>
                 <tr class="contactfloat">
                     <td valign="top">
-                        <input type="text" name="email" ng-model="email" maxlength="80" size="30" placeholder="Email" class="contactform">
+                        <input type="email" name="email" ng-model="email" maxlength="80" size="30" placeholder="Email" class="contactform">
                     </td>
                 </tr>
                 <tr class="contactfloat">
@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" id="submitbutton" ng-click="sendEmail(firstname, lastname, email, emne, besked)" value="Send mail">
+                        <input type="submit" id="submitbutton" ng-click="sendEmail(fornavn, efternavn, email, emne, besked)" value="Send mail">
                     </td>
                 </tr>
             </table>

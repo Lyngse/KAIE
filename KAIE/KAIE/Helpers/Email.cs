@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Net.Mail;
+using System.Net;
 
 namespace KAIE.Helpers
 {
@@ -18,14 +19,29 @@ namespace KAIE.Helpers
             string Emne = emne;
             string Besked = besked;
 
+            MailMessage mm = new MailMessage(Email, to);
+            mm.Subject = emne;
+            mm.Body = "Navn: " + Fornavn + " " + Efternavn + "<br /><br />" + "Email: " + Email + "<br />" + Besked;
 
-            SmtpClient client = new SmtpClient("smtp.gmail.com");
-            MailAddress From = new MailAddress(Email, Fornavn + " " + Efternavn);
+            mm.IsBodyHtml = true;
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.EnableSsl = true;
+            NetworkCredential NetworkCred = new NetworkCredential();
+            NetworkCred.UserName = "sorenlyng93@gmail.com";
+            NetworkCred.Password = "96cgnbzt9rr";
+            smtp.Credentials = NetworkCred;
+            smtp.Port = 587;
+            smtp.Send(mm);
+
+
+            /*SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+            MailAddress From = new MailAddress(Email);
             MailAddress To = new MailAddress(to);
             MailMessage mail = new MailMessage(From, To);
             mail.Subject = Emne;
             mail.Body = Besked;
-            client.Send(mail);
+            client.Send(mail);*/
 
         }
     }

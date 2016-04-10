@@ -1,7 +1,7 @@
 app.controller('RandomController', ['$scope', '$http', '$location', '$rootScope', '$routeParams', function ($scope, $http, $location, $rootScope, $routeParams) {
     
-    $scope.sendEmail = function(email) {
-        $http.post($rootScope.apiUrl + "/Email/SendEmail", {Fornavn: email.fornavn, Efternavn:  email.efternavn, Email: email, Emne:  email.emne, Besked:  email.besked})
+    $scope.sendEmail = function(fornavn, efternavn, email, emne, besked) {
+        $http.post($rootScope.apiUrl + "/Email/SendEmail", {Fornavn: fornavn, Efternavn: efternavn, Email: email, Emne:  emne, Besked:  besked})
         .success(function() {
             if(data.status === "success")
             {
@@ -14,6 +14,7 @@ app.controller('RandomController', ['$scope', '$http', '$location', '$rootScope'
             }
         }).error(function(err) {
             $scope.sendEmailErr = err;
+            console.log(err);
         })
     }
     
