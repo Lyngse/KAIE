@@ -138,6 +138,7 @@ main{
     background-image: url(../Images/footer.jpg);
     border-top: 5px solid #9a1e1e;
     padding: 10px 0 0 20px;
+<<<<<<< HEAD
 }
 
 .footerleft{
@@ -152,6 +153,22 @@ main{
     width: 20%;
 }
 
+=======
+}
+
+.footerleft{
+    width: 70%;
+}
+
+.footerul{
+    list-style: none;
+    margin: 0 20px 0 0;
+    padding: 0;
+    float: left;
+    width: 20%;
+}
+
+>>>>>>> origin/master
 .footerli{
     margin-bottom: 30px;
 }    
@@ -200,6 +217,10 @@ main{
 
 /* Used on Contact page*/
 #maincontact{
+<<<<<<< HEAD
+    width: 63%;
+=======
+>>>>>>> origin/master
     min-height: 600px;
 }
 
@@ -214,7 +235,11 @@ main{
 
 #contactsec{
     width: 600px;
+<<<<<<< HEAD
+    height: 600px;
+=======
     height: 550px;
+>>>>>>> origin/master
     margin-left: 10px;
     float: left;
 }
@@ -287,7 +312,11 @@ textarea {
     margin: 10px;
 }
 
+<<<<<<< HEAD
+/* Søren stuff :D */
+=======
 /* Used on Nyheder page */
+>>>>>>> origin/master
 .nyhederBokss{
     margin-top: 20px;
     border-radius: 5px;
@@ -534,14 +563,22 @@ textarea {
     
     .menuli{
         margin-top: 2px;
+<<<<<<< HEAD
+        padding 7px 20px 0 20px;
+=======
         padding: 7px 20px 0 20px;
+>>>>>>> origin/master
         width: 100%;
         text-align: center;
     }
     #linkfix{
         float: left;
         height: 1px;
+<<<<<<< HEAD
+        padding 7px 20px 0 20px;
+=======
         padding: 7px 20px 0 20px;
+>>>>>>> origin/master
 
     }
     

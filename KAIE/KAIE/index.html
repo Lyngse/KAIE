@@ -30,50 +30,57 @@
         
         <!-- Navigation Mainmenu -->
         <nav class="menu">
-            <ul class="menuul">
-                <a class="links" ng-href="http://sorenlyng.dk/#/"><li class="menuli">Forside</li></a>
-                <a class="links" ng-href="http://sorenlyng.dk/#/Nyheder"><li class="menuli">Nyheder</li></a>
-                <a class="links" ng-href="#"><li class="menuli">Galleri</li></a>
-                <a class="links" ng-href="http://sorenlyng.dk/#/Sponsorer"><li class="menuli">Sponsorer</li></a>
-                <a class="links" ng-href="#"><li class="menuli">Foreninger</li></a>
-                <a class="links" ng-href="http://sorenlyng.dk/#/Kontakt"><li class="menuli">Kontakt</li></a>
+            <ul class="menuul mainul">
+                <li class="menuli"><a class="links" ng-href="http://sorenlyng.dk/#/">Forside</a></li>
+                <li class="menuli"><a class="links" ng-href="http://sorenlyng.dk/#/Nyheder">Nyheder</a></li>
+                <li class="menuli"><a class="links" ng-href="#">Galleri</a></li>
+                <li class="menuli"><a class="links" ng-href="http://sorenlyng.dk/#/Sponsorer">Sponsorer</a></li>
+                    
+                <li class="menuli"><a class="links" ng-href="#">Foreninger</a>
+                <ul class="subul">
+                    <li class="subli"><a class="dropdownlinks" href="#">Hallen</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="#">Lokal Arkiv</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="#">Boldklub</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="http://klinkby.kredscms.dk/" target="_blank">FDF</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="http://kfogs.dk/" target="_blank">Familie og Samfund</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="http://klinkbygymnastikforening.dk" target="_blank">Gymnastikforening</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="http://klinkby.skoleporten.dk/sp" target="_blank">Skolen</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="http://hht.nu" target="_blank">Menighedsråd</a></li>
+                    
+                </ul>
+                </li>
+                
+                <li class="menuli"><a class="links" ng-href="http://sorenlyng.dk/#/Kontakt">Kontakt</a></li>
                 <li id="linkfix"></li>
             </ul>
         </nav> 
-    
-
-              
-        <main>
-            
-            <!-- Page Content -->
-            <div class="content">
-              <ng-view></ng-view>
-            </div>
-            
-            <!-- jQuery Version 1.11.1 -->
-            <script src="Scripts/jquery-2.2.2.min.js"></script>
-            <script src="Scripts/jquery.validate.min.js"></script>
-
-            <!-- Bootstrap Core JavaScript -->
-            <script src="Scripts/bootstrap.min.js"></script>
-            <script src="Scripts/moment.min.js"></script>
-            <script src="Scripts/angular.min.js"></script>
-            <script src="Scripts/angular-route.min.js"></script>
-            <script src="Scripts/angular-animate.min.js"></script>
-            <script src="Scripts/ui-bootstrap-tpls-0.14.3.min.js"></script>
-            <script src="Scripts/angular-file-upload.min.js"></script>
-            <script src="Scripts/respond.min.js"></script>
-
-            <!-- Own scripts -->
-            <script src="Scripts/Custom/app.js"></script>
-            <script src="Scripts/Custom/ForsideController.js"></script>
-            <script src="Scripts/Custom/NyhederController.js"></script>
-            <script src="Scripts/Custom/NyhedController.js"></script>
-            <script src="Scripts/Custom/RandomController.js"></script>
-            <script src="Scripts/Custom/NyhedsDashboardController.js"></script>
-            
-
+     
+        <!-- Page Content -->
+        <main class="content">
+            <ng-view></ng-view>
         </main>
+            
+        <!-- jQuery Version 1.11.1 -->
+        <script src="Scripts/jquery-2.2.2.min.js"></script>
+        <script src="Scripts/jquery.validate.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="Scripts/bootstrap.min.js"></script>
+        <script src="Scripts/moment.min.js"></script>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/angular-route.min.js"></script>
+        <script src="Scripts/angular-animate.min.js"></script>
+        <script src="Scripts/ui-bootstrap-tpls-0.14.3.min.js"></script>
+        <script src="Scripts/angular-file-upload.min.js"></script>
+        <script src="Scripts/respond.min.js"></script>
+
+        <!-- Own scripts -->
+        <script src="Scripts/Custom/app.js"></script>
+        <script src="Scripts/Custom/ForsideController.js"></script>
+        <script src="Scripts/Custom/NyhederController.js"></script>
+        <script src="Scripts/Custom/NyhedController.js"></script>
+        <script src="Scripts/Custom/RandomController.js"></script>
+        <script src="Scripts/Custom/NyhedsDashboardController.js"></script>
         
         <!-- Footer --> 
         <footer id="footer">
