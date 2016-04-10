@@ -9,6 +9,8 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed; 
     font-family: sans-serif;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 .container{
@@ -17,6 +19,7 @@ body{
     background-color: #ebebeb;
     background-image: url(../Images/containerbg.jpg);
     min-height: 600px;
+    margin-top: -50px;
     box-shadow: -12px 0 20px -8px #000, 12px 0 20px -8px #000;
     -webkit-transition: transform 0.4s ease;
     -moz-transition: transform 0.4s ease;
@@ -36,7 +39,7 @@ h1{
 h2{
     font-family: BebasNeue;  
     font-size: 200%;
-    margin: 4% 0 0 0;
+    margin: 3% 0 0 0;
     color: #fff;
     float: left;
     text-align: center;

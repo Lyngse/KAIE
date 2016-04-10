@@ -225,7 +225,12 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\background.jpg" />
+    <Content Include="Images\containerbg.jpg" />
     <Content Include="Images\footer.jpg" />
+    <Content Include="Images\Foreninger\Klinkbyhal1.jpg" />
+    <Content Include="Images\Foreninger\Klinkbyhal2.jpg" />
+    <Content Include="Images\Foreninger\Klinkbyhal3.jpg" />
+    <Content Include="Images\Foreninger\Klinkbyhal4.jpg" />
     <Content Include="Images\Header.jpg" />
     <Content Include="Images\klinkbyhallen.jpg" />
     <Content Include="Images\phone.png" />
@@ -333,6 +338,7 @@
     <Content Include="Templates\Foreninger.html" />
     <Content Include="Templates\Forside.html" />
     <Content Include="Templates\Galleri.html" />
+    <Content Include="Templates\hallen.html" />
     <Content Include="Templates\Kontakt.html" />
     <Content Include="Templates\Login.html" />
     <Content Include="Templates\Nyhed.html" />

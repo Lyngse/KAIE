@@ -30,6 +30,10 @@ app.config(['$routeProvider', function ($routeProvider) {
       templateUrl: 'Templates/Kontakt.html',
       controller: 'RandomController'
     }).
+    when('/Hallen', {
+      templateUrl: 'Templates/hallen.html',
+      controller: 'RandomController'
+    }).
     when('/Sponsorer', {
       templateUrl: 'Templates/Sponsorer.html',
       controller: 'RandomController'
