@@ -4,34 +4,28 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using KAIE.Attributes;
 
 namespace KAIE.Controllers
 {
+    [KAIEAuthAttributes]
     public class AdministratorController : Controller
     {
         KAIEDBContainer db = new KAIEDBContainer();
 
-        public ActionResult Read(int id)
-        {
-            Nyheder n = db.NyhederSet.Find(id);
-
-            object obj = new { status = "success", Id = n.Id, Titel = n.Titel, Dato = n.Dato, Tekst = n.Tekst, Forfatter = n.Forfatter };
-            return Json(obj, JsonRequestBehavior.AllowGet);
-        }
-
         [HttpPost]
-        public ActionResult Create(string titel, string tekst, string forfatter)
+        public ActionResult CreateNyhed(string titel, string tekst, string forfatter)
         {
             DateTime dato = DateTime.Now;
             Nyheder n = db.NyhederSet.Add(new Nyheder() { Titel = titel, Tekst = tekst, Forfatter = forfatter, Dato = dato });
 
             db.SaveChanges();
 
-            return Json(new { status = "success", message = "En ny nyhed blev uploadet", Id = n.Id }, JsonRequestBehavior.AllowGet);
+            return Json(new { status = "success", message = "En ny nyhed blev uploadet" }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public ActionResult Update(int id, string titel, string tekst, string forfatter)
+        public ActionResult UpdateNyhed(int id, string titel, string tekst, string forfatter)
         {
             Nyheder n = db.NyhederSet.Find(id);
 
@@ -47,13 +41,84 @@ namespace KAIE.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(int id)
+        public ActionResult DeleteNyhed(int id)
         {
             Nyheder n = db.NyhederSet.Find(id);
             db.NyhederSet.Remove(n);
             db.SaveChanges();
 
             return Json(new { status = "success", message = "Nyhed slettet" }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult CreateAlbum(string navn, string beskrivelse)
+        {
+            DateTime dato = DateTime.Now;
+            Album a = db.AlbumSet.Add(new Album { Navn = navn, Beskrivelse = beskrivelse, Dato = dato });
+            db.SaveChanges();
+
+            return Json(new { status = "success" });
+        }
+
+        public ActionResult ReadAlbum(int id)
+        {
+            Album a = db.AlbumSet.Find(id);
+
+            object obj = new { status = "success", Id = a.Id, Beskrivelse = a.Beskrivelse, Dato = a.Dato };
+            return Json(obj, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateAlbum(int id, string navn, string beskrivelse)
+        {
+            Album a = db.AlbumSet.Find(id);
+
+            a.Navn = navn;
+            a.Beskrivelse = beskrivelse;
+
+            db.Entry(a).State = EntityState.Modified;
+            db.SaveChanges();
+
+            return Json(new { status = "success", message = "Album redigeret" });
+        }
+
+        [HttpPost]
+        public ActionResult DeleteAlbum(int id)
+        {
+            Album a = db.AlbumSet.Find(id);
+
+            foreach (Billede b in a.Billede.ToList())
+            {
+                a.Billede.Remove(b);
+            }
+            db.AlbumSet.Remove(a);
+            db.SaveChanges();
+
+            return Json(new { status = "success", message = "Album slettet" });
+        }
+
+        public ActionResult ReadBilleder(int id)
+        {
+            Album a = db.AlbumSet.Find(id);
+            List<object> billeder = new List<object>();
+
+            foreach (Billede b in a.Billede)
+            {
+                billeder.Add(b);
+            }
+
+            return Json(new { status = "success", Billeder = billeder }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteBillede(int id)
+        {
+            Billede b = db.BilledeSet.Find(id);
+
+            db.BilledeSet.Remove(b);
+            db.SaveChanges();
+
+            return Json(new { status = "success", message = "Billede slettet" });
         }
     }
 }

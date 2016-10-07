@@ -27,5 +27,7 @@ namespace KAIE
     
         public virtual DbSet<Nyheder> NyhederSet { get; set; }
         public virtual DbSet<Administrator> AdministratorSet { get; set; }
+        public virtual DbSet<Billede> BilledeSet { get; set; }
+        public virtual DbSet<Album> AlbumSet { get; set; }
     }
 }

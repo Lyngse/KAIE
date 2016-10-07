@@ -1,157 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Klinkby Alt-I-Et</title>
-    <!--<link rel="icon" href="Images/title.ico" type="image/x-icon"> -->
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../Content/bootstrap.css" rel="stylesheet">
-    <link href="../Content/Site.css" rel="stylesheet"> 
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+    <h2>Nyehder</h2>
     
-</head>
-
-<body ng-app="KAIE">
-    <div class="container">
+    <div class="col-sm-4 col-md-3">
+      <div class="thumbnail">
+        <img class="nyheder-img" src="Images/yoga.jpg" alt="...">
+        <div class="caption">
+          <h3>Thumbnail label</h3>
+          <p>Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst.   </p>
+          <button type="button" class="btn btn-info" ng-click="gotoNyhed(nyheder.id)"> Læs mere! </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-3">
+      <div class="thumbnail">
+        <img class="nyheder-img" src="Images/yoga.jpg" alt="...">
+        <div class="caption">
+          <h3>Thumbnail label</h3>
+          <p>Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst.  </p>
+          <button type="button" class="btn btn-info" ng-click="gotoNyhed(nyheder.id)"> Læs mere! </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-3">
+      <div class="thumbnail">
+        <img class="nyheder-img" src="Images/yoga.jpg" alt="...">
+        <div class="caption">
+          <h3>Thumbnail label</h3>
+          <p>Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst.   </p>
+          <button type="button" class="btn btn-info" ng-click="gotoNyhed(nyheder.id)"> Læs mere! </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-3">
+      <div class="thumbnail">
+        <img class="nyheder-img" src="Images/yoga.jpg" alt="...">
+        <div class="caption">
+          <h3>Thumbnail label</h3>
+          <p>Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst.  </p>
+          <button type="button" class="btn btn-info" ng-click="gotoNyhed(nyheder.id)"> Læs mere! </button>
+        </div>
+      </div>
+    </div>
     
-        <header id="headerimg2">
-            <h1>Klinkby ALT-I-ET</h1>
-            <div class="phonefix">
-                <img id="phone" src="Images/phone.png">
-                <h2>29 63 85 27</h2>
-            </div>
-            
-        </header>  
-        
-        <!-- Navigation Mainmenu -->
-        <nav class="menu">
-            <ul class="menuul">
-                <a class="links" ng-href="http://sorenlyng.dk/#/"><li class="menuli">Forside</li></a>
-                <a class="links" ng-href="http://sorenlyng.dk/#/Nyheder"><li class="menuli">Nyheder</li></a>
-                <a class="links" ng-href="#"><li class="menuli">Galleri</li></a>
-                <a class="links" ng-href="http://sorenlyng.dk/#/Sponsorer"><li class="menuli">Sponsorer</li></a>
-                <a class="links" ng-href="#"><li class="menuli">Foreninger</li></a>
-                <a class="links" ng-href="#"><li class="menuli">Kontakt</li></a>
-                <li id="linkfix"></li>
-            </ul>
-        </nav> 
-    
+  </div>
+</div>
 
-              
-        <main>
-
-<h3>Nyheder</h3>
-
+<!--
 <div class="row">
     <div class="nyhederBoks" >
         <ul class="post-grid">
             <li ng-repeat="nyheder in Nyheder.nList" class="nyhederBokss col-md-4">
                 <h3 class="nyhederTitel">{{nyheder.Titel}}</h3>
                 <p class="nyhederTekst">{{nyheder.Tekst | limitTo:130}}...</p>
-                <button type="button" class="btn btn-info" ng-click="gotoNyhed(nyheder)"> Læs mere! </button>
+                <button type="button" class="btn btn-info" ng-click="gotoNyhed(nyheder.id)"> Læs mere! </button>
             </li>
         </ul>
         <button type="button" ng-click="gotoCreateNyhed()"> Tilføj nyhed! </button>
     </div>
 </div>
-
-        
-               </main>
-        
-        <!-- Footer --> 
-        <footer id="footer">
-            <div class="footerleft">
-                <ul class="footerul">
-                    <li class="footerli"><a class="footerlinks" href="#">NYHEDER</a></li>
-                        <li class="footersubli"><a class="footersublinks" href="#">Gymnastikforening</a></li>
-                        <li class="footersubli"><a class="footersublinks" href="#">Boldklub</a></li>
-                        <li class="footersubli"><a class="footersublinks" href="#">Andet</a></li>
-                </ul>
-                <ul class="footerul">
-                    <li class="footerli"><a class="footerlinks" href="#">GALLERI</a></li>
-                        <li class="footersubli"><a class="footersublinks" href="#">Gymnastikforening</a></li>
-                        <li class="footersubli"><a class="footersublinks" href="#">Boldklub</a></li>
-                        <li class="footersubli"><a class="footersublinks" href="#">Andet</a></li>
-                </ul>
-                <ul class="footerul">
-                    <li class="footerli"><a class="footerlinks" href="#">FORENINGER</a></li>
-                        <li class="footersubli"><a class="footersublinks" href="#">Gymnastikforening</a></li>
-                        <li class="footersubli"><a class="footersublinks" href="#">Boldklub</a></li>
-                        <li class="footersubli"><a class="footersublinks" href="#">Andet</a></li>
-                </ul>
-                <ul class="footerul">
-                    <li class="footerli"><a class="footerlinks" href="#">KONTAKT</a></li>
-
-                    <div id="footerright">         
-                        <p class="footerp">Klinkby</p>
-                        <p class="footerp">Nejrupvej 2</p>
-                        <p class="footerp">7620 Lemvig</p>
-                        <p class="footerp">Tlf.: 29638527</p>
-                    </div>
-                </ul>
-            </div>
-            
-            <!--- <div id="googlemaps" class="col-md-4">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2198.9057436859844!2d8.225106316095289!3d56.555478380775675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464a22017d7a4a41%3A0x7d474e54f75c4406!2sNejrupvej+2%2C+7620+Lemvig!5e0!3m2!1sda!2sdk!4v1459352774448" width="290px" height="290px" frameborder="0" style="border:0" allowfullscreen></iframe> 
-            </div> --->
-            
-        </footer>        
-    </div>
-        
-</body>
-<!-- Sidebar menu -->
-    
-    <nav class="sidebar-menu">
-        <a ng-href="#" class="nav-toggle"><span class="glyphicon glyphicon-menu-right" id="sidebarArrow" aria-hidden="true"></span></a>
-        <!--<div class="nav-toggle"><span class="glyphicon glyphicon-menu-right" id="sidebarArrow" aria-hidden="true"></span></div>-->
-        <h3 class="sidebarh3">Klinkby Alt-I-Et</h3>
-        <h5 class="sidebarh5">Administrator panel</h5>
-        <div class="streg"></div>
-        
-        <ul class="sidebarul">
-            <li class="sidebarli"><a class="sidebarlinks" ng-href="http://sorenlyng.dk/#/NyhedsDashboard">
-                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-                Nyheds Dashboard</a></li>
-            <li class="sidebarli"><a class="sidebarlinks" ng-href="http://sorenlyng.dk/#/CreateNyhed">
-                <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
-                Tilføj Nyhed</a></li>
-            <li class="sidebarli"><a class="sidebarlinks" ng-href="#">
-                <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
-                Galleri</a></li>
-            <li class="sidebarli"><a class="sidebarlinks" ng-href="#">
-                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-                Foreningstags</a></li>
-            <li class="sidebarli"><a class="sidebarlinks" ng-href="#">
-                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-                Ændre Login Informationer</a></li>
-        </ul>
-        <div class="streg"></div>
-
-        <ul class="sidebarul">
-            <li class="sidebarli"><a class="sidebarlinks" ng-href="#">
-                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-                Log ud
-            </li>
-        </ul>
-    </nav>
-    
-    <!-- Sidebar script -->
-    <script type="text/javascript">
-    (function() {
-        
-        $('.nav-toggle').click(function() {
-            $(this).find('span').toggleClass('glyphicon-menu-right glyphicon-menu-left');
-        });
-        
-        $('.nav-toggle').click(function(e) {
-            e.preventDefault();
-           $('body').toggleClass('active-sidebar');
-        });
-    })();
-    </script>
-</html>
+-->

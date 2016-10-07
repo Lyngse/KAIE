@@ -1,0 +1,41 @@
+<md-bottom-sheet class="md-grid" layout="column">
+  <div layout="row" layout-align="center center" ng-cloak>
+    <h3>Administrator kontrolpanel</h3>
+  </div>
+  <div ng-cloak>
+    <md-list flex layout="row" layout-align="center center">
+      <md-list-item>
+        <div>
+          <md-button class="md-grid-item-content" ng-click="gotoNyheder()" md-no-ink>
+            <span class="glyphicon glyphicon-bullhorn btn-grid-icon"></span>
+            <div class="md-grid-text"> Nyheder </div>
+          </md-button>
+        </div>
+      </md-list-item>
+      <md-list-item>
+        <div>
+          <md-button class="md-grid-item-content" ng-click="listItemClick($index)" md-no-ink>
+            <span class="glyphicon glyphicon-calendar btn-grid-icon"></span>
+            <div class="md-grid-text"> Begivenheder </div>
+          </md-button>
+        </div>
+      </md-list-item>
+      <md-list-item>
+        <div>
+          <md-button class="md-grid-item-content" ng-click="gotoGalleri()" md-no-ink>
+            <span class="glyphicon glyphicon-camera btn-grid-icon"></span>
+            <div class="md-grid-text"> Galleri </div>
+          </md-button>
+        </div>
+      </md-list-item>
+      <md-list-item>
+        <div>
+          <md-button class="md-grid-item-content" ng-click="$root.logout()" md-no-ink>
+            <span class="glyphicon glyphicon-log-out btn-grid-icon"></span>
+            <div class="md-grid-text"> Log ud </div>
+          </md-button>
+        </div>
+      </md-list-item>
+    </md-list>
+  </div>
+</md-bottom-sheet>

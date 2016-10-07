@@ -20,4 +20,5 @@ app.controller('RandomController', ['$scope', '$http', '$location', '$rootScope'
     
     
     
+    
 }]);

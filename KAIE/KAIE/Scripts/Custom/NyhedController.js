@@ -2,7 +2,7 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
   
   //Indlæs bestemt nyheder fra deres id
   $scope.readNyheder = function() {
-    $http.get($rootScope.apiUrl + "/Nyheder/Read?id=" + $routeParams.nyhederId)
+    $http.get($rootScope.apiUrl + "/Public/ReadNyhed?id=" + $routeParams.nyhederId)
     .success(function(data)
     {
       if(data.status ==="success")
@@ -23,7 +23,7 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
   
   //Update nyhed
   $scope.updateNyhed = function(titel, tekst, forfatter) {
-    $http.post($rootScope.apiUrl + "/Nyheder/Update", { Id: $scope.Nyhed.Id, Titel: titel, Tekst: tekst, Forfatter: forfatter })
+    $http.post($rootScope.apiUrl + "/Administrator/UpdateNyhed", { Id: $scope.Nyhed.Id, Titel: titel, Tekst: tekst, Forfatter: forfatter })
     .success(function(data)
     {
       if(data.status === "success")

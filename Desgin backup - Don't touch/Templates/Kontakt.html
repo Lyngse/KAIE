@@ -1,0 +1,51 @@
+            
+<div id="maincontact">
+    <h3>Kontakt Information</h3>
+    
+    <section id="contactinfosec">
+        <p>Email: klinkbyhallen@klinkbyhallen.dk</p>
+        <p>Adresse: Nejrupvej 2 7620 Lemvig</p>
+        <p>Telefon nummer: 29638527</p>
+    </section>
+    
+    <section id="contactsec">
+        <form name="contactform" method="post">
+            <table width="650px">
+                <tr class="contactfloat">
+                    <td valign="top">
+                        <input type="text" name="first_name" ng-model="fornavn" maxlength="50" size="30" placeholder="Fornavn" class="contactform">
+                    </td>
+                </tr>
+                <tr class="contactfloat">
+                    <td valign="top">
+                        <input type="text" name="last_name" ng-model="efternavn" maxlength="50" size="30" placeholder="Efternavn" class="contactform">
+                    </td>
+                </tr>
+                <tr class="contactfloat">
+                    <td valign="top">
+                        <input type="email" name="email" ng-model="email" maxlength="80" size="30" placeholder="Email" class="contactform">
+                    </td>
+                </tr>
+                <tr class="contactfloat">
+                    <td valign="top">
+                        <input type="text" name="emne" ng-model="emne" maxlength="50" size="30" placeholder="Emne" class="contactform">
+                    </td>
+                </tr>
+                <tr class="contactfloat">
+                    <td valign="top">
+                        <textarea name="message" ng-model="besked" maxlength="1000" cols="25" rows="6" placeholder="Besked" class="contactform"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" id="submitbutton" ng-click="sendEmail(fornavn, efternavn, email, emne, besked)" value="Send mail">
+                    </td>
+                </tr>
+            </table>
+        </form>        
+    </section> 
+    
+    <section id="googlemapssec">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2198.9057436859844!2d8.225106316095289!3d56.555478380775675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464a22017d7a4a41%3A0x7d474e54f75c4406!2sNejrupvej+2%2C+7620+Lemvig!5e0!3m2!1sda!2sdk!4v1459352774448" width="288px" height="451px" frameborder="0" style="border:0" allowfullscreen></iframe> 
+    </section>
+</div>                    

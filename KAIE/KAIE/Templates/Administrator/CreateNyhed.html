@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-12 text-center">
+        <form name="postForm">
+            <h4>Titel</h4>
+            <input type="text" ng-model="nyhedTitel" />
+            <h4> Vælg Forenings Forfatter</h4>          
+            <select ng-model="nyhedForfatter">
+                <option value="Familie og Samfund Klinkby">Familie og Samfund Klinkby</option>
+                <option value="Klinkby Hallen">Klinkby Hallen</option>
+                <option value="Klinkby Boldklub">Klinkby Boldklub</option>
+                <option value="Klinkby Gymnastikforening">Klinkby Gymnastikforening</option>
+                <option value="Klinkby Borgerforening">Klinkby Borgerforening</option>
+                <option value="Klinkby FDF">Klinkby FDF</option>
+                <option value="Klinkby Skole">Klinkby Skole</option>
+                <option value="Fællesspisning">Fællesspisning</option>
+                <option value="Lokal Arkiv">Lokal Arkiv</option>
+                <option value="Meninghedsråd">Meninghedsråd</option>
+                <option value="Revy">Revy</option>
+            </select>
+            <h4>Body</h4>
+            <textarea ng-model="nyhedTekst" rows="10"></textarea>
+            <input type="submit" value="Submit" ng-click="createNyhed(nyhedTitel, nyhedTekst, nyhedForfatter)" />
+        </form>
+    </div>
+</div>

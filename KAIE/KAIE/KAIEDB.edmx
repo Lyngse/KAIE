@@ -8,6 +8,12 @@
   <EntityContainer Name="KAIEDBStoreContainer">
     <EntitySet Name="NyhederSet" EntityType="KAIEDB.Store.NyhederSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="AdministratorSet" EntityType="KAIEDB.Store.AdministratorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BilledeSet" EntityType="KAIEDB.Store.BilledeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AlbumSet" EntityType="KAIEDB.Store.AlbumSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="AlbumBillede" Association="KAIEDB.Store.AlbumBillede">
+      <End Role="Album" EntitySet="AlbumSet" />
+      <End Role="Billede" EntitySet="BilledeSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="NyhederSet">
     <Key>
@@ -27,6 +33,35 @@
     <Property Name="Brugernavn" Type="longtext" Nullable="false" />
     <Property Name="Kodeord" Type="longtext" Nullable="false" />
   </EntityType>
+  <EntityType Name="BilledeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BilledeFil" Type="longblob" Nullable="false" />
+    <Property Name="AlbumId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AlbumSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Navn" Type="longtext" Nullable="false" />
+    <Property Name="Beskrivelse" Type="longtext" Nullable="false" />
+    <Property Name="Dato" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="AlbumBillede">
+    <End Role="Album" Type="KAIEDB.Store.AlbumSet" Multiplicity="1" />
+    <End Role="Billede" Type="KAIEDB.Store.BilledeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Billede">
+        <PropertyRef Name="AlbumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -34,6 +69,12 @@
         <EntityContainer Name="KAIEDBContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="NyhederSet" EntityType="KAIEDB.Nyheder" />
           <EntitySet Name="AdministratorSet" EntityType="KAIEDB.Administrator" />
+          <EntitySet Name="BilledeSet" EntityType="KAIEDB.Billede" />
+          <EntitySet Name="AlbumSet" EntityType="KAIEDB.Album" />
+          <AssociationSet Name="AlbumBillede" Association="KAIEDB.AlbumBillede">
+            <End Role="Album" EntitySet="AlbumSet" />
+            <End Role="Billede" EntitySet="BilledeSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Nyheder">
           <Key>
@@ -53,6 +94,37 @@
           <Property Name="Brugernavn" Type="String" Nullable="false" />
           <Property Name="Kodeord" Type="String" Nullable="false" />
         </EntityType>
+        <EntityType Name="Billede">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BilledeFil" Type="Binary" Nullable="false" />
+          <NavigationProperty Name="Album" Relationship="KAIEDB.AlbumBillede" FromRole="Billede" ToRole="Album" />
+          <Property Name="AlbumId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Navn" Type="String" Nullable="false" />
+          <Property Name="Beskrivelse" Type="String" Nullable="false" />
+          <Property Name="Dato" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Billede" Relationship="KAIEDB.AlbumBillede" FromRole="Album" ToRole="Billede" />
+        </EntityType>
+        <Association Name="AlbumBillede">
+          <End Type="KAIEDB.Album" Role="Album" Multiplicity="1" />
+          <End Type="KAIEDB.Billede" Role="Billede" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Billede">
+              <PropertyRef Name="AlbumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -76,6 +148,25 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Brugernavn" ColumnName="Brugernavn" />
           <ScalarProperty Name="Kodeord" ColumnName="Kodeord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BilledeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(KAIEDB.Billede)">
+        <MappingFragment StoreEntitySet="BilledeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BilledeFil" ColumnName="BilledeFil" />
+          <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlbumSet">
+      <EntityTypeMapping TypeName="IsTypeOf(KAIEDB.Album)">
+        <MappingFragment StoreEntitySet="AlbumSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Navn" ColumnName="Navn" />
+          <ScalarProperty Name="Beskrivelse" ColumnName="Beskrivelse" />
+          <ScalarProperty Name="Dato" ColumnName="Dato" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

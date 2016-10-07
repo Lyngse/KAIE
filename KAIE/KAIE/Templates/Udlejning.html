@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+    <h2>Udlejning</h2>
+    
+    <p class="udlejning-tekst">Der er mulighed for at leje hallen, multisalen eller torvet til diverse arrangementer. </p>
+    <p class="udlejning-tekst">Nedenunder ses en række billeder af forskellige arrangementer holdt i multisalen.</p> 
+    <p class="udlejning-tekst">Har dette din interesse bedes du kontakte Paw:</p>
+    
+    <ul class="udlejning-ul">
+      <li class="udlejning-info">Hverdage mellem 08.00 - 16.00 på</li>
+      <li class="udlejning-info">29 63 85 27</li>
+      <li class="udlejning-info">Eller på mail</li>
+      <li class="udlejning-info">klinkbyhallen@klinkbyhallen.dk</li>
+    </ul>
+    
+    
+    
+    
+    
+    
+    
+    <div class="col-xs-6 col-md-3" ng-repeat="img in imgs">
+      <a class="fancybox udlejning-thumbnail md-whiteframe-10dp" rel="udlejning" href="{{img.image}}">
+        <img src="{{img.image}}" class="udlejning-img" alt="..." />
+      </a>
+    </div>
+    
+  </div>
+</div>

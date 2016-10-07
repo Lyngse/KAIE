@@ -1,0 +1,10 @@
+<div class="row">
+    <h1> {{Nyhed.Titel}} </h1>
+    <p>Skrevet af: {{Nyhed.Forfatter}} </p>
+    <p> Dato: {{Nyhed.Dato | date:"medium"}} </p>
+    <hr />
+    <p>{{Nyhed.Tekst}}</p>
+    <button type="button" ng-click="gotoUpdateNyhed()"> Rediger </button>
+    <button type="button" ng-click="deleteNyhed()"> Slet </button>
+    <button type="button" ng-click="gotoNyheder()"> Nyheder </button>
+</div>

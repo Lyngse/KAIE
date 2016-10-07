@@ -21,7 +21,7 @@ namespace KAIE.Helpers
 
             MailMessage mm = new MailMessage(Email, to);
             mm.Subject = emne;
-            mm.Body = "Navn: " + Fornavn + " " + Efternavn + "<br /><br />" + "Email: " + Email + "<br />" + Besked;
+            mm.Body = "Navn: " + Fornavn + " " + Efternavn + "<br />" + "Email: " + Email + "<br /><br />" + Besked;
 
             mm.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
@@ -33,16 +33,6 @@ namespace KAIE.Helpers
             smtp.Credentials = NetworkCred;
             smtp.Port = 587;
             smtp.Send(mm);
-
-
-            /*SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-            MailAddress From = new MailAddress(Email);
-            MailAddress To = new MailAddress(to);
-            MailMessage mail = new MailMessage(From, To);
-            mail.Subject = Emne;
-            mail.Body = Besked;
-            client.Send(mail);*/
-
         }
     }
 }

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Klinkby Alt-I-Et</title>
+    <!--<link rel="icon" href="Images/title.ico" type="image/x-icon"> -->
+
+    <!-- Bootstrap Core CSS -->
+    <link href="Content/bootstrap.css" rel="stylesheet">
+    <link href="Content/Site.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    
+</head>
+
+<body ng-app="KAIE">
+    <div class="container">
+    
+        <header id="headerimg2">
+            <h1>Klinkby ALT-I-ET</h1>
+            <div class="phonefix">
+                <img id="phone" src="Images/phone.png">
+                <h2>29 63 85 27</h2>
+            </div>
+            
+        </header>  
+        
+        <!-- Navigation Mainmenu -->
+        <nav class="menu">
+            <ul class="menuul mainul">
+                <li class="menuli"><a class="links" ng-href="http://sorenlyng.dk/#/">Forside</a></li>
+                <li class="menuli"><a class="links" ng-href="http://sorenlyng.dk/#/Nyheder">Nyheder</a></li>
+                <li class="menuli"><a class="links" ng-href="#">Galleri</a></li>
+                <li class="menuli"><a class="links" ng-href="http://sorenlyng.dk/#/Sponsorer">Sponsorer</a></li>
+                    
+                <li class="menuli"><a class="links" ng-href="#">Foreninger</a>
+                <ul class="subul">
+                    <li class="subli"><a class="dropdownlinks" href="http://sorenlyng.dk/#/Hallen">Hallen</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="#">Lokal Arkiv</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="#">Boldklub</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="http://klinkby.kredscms.dk/" target="_blank">FDF</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="http://kfogs.dk/" target="_blank">Familie og Samfund</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="http://klinkbygymnastikforening.dk" target="_blank">Gymnastikforening</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="http://klinkby.skoleporten.dk/sp" target="_blank">Skolen</a></li>
+                    <li class="subli"><a class="dropdownlinks" href="http://hht.nu" target="_blank">Menighedsråd</a></li>
+                    
+                </ul>
+                </li>
+                
+                <li class="menuli"><a class="links" ng-href="http://sorenlyng.dk/#/Kontakt">Kontakt</a></li>
+                <li id="linkfix"></li>
+            </ul>
+        </nav> 
+     
+        <!-- Page Content -->
+        <main class="content">
+            <ng-view></ng-view>
+        </main>
+            
+        <!-- jQuery Version 1.11.1 -->
+        <script src="Scripts/jquery-2.2.2.min.js"></script>
+        <script src="Scripts/jquery.validate.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="Scripts/bootstrap.min.js"></script>
+        <script src="Scripts/moment.min.js"></script>
+        <script src="node_modules/angular/angular.min.js"></script>
+        <script src="node_modules/angular-route/angular-route.min.js"></script>
+        <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+        <script src="node_modules/angular-material/angular-material.min.js"></script>
+        <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+        <script src="node_modules/angular-messages/angular-messages.min.js"></script>
+        <script src="node_modules/ng-flow/dist/ng-flow.min.js"></script>
+        <script src="Scripts/ui-bootstrap-tpls-0.14.3.min.js"></script>
+        <script src="Scripts/angular-file-upload.min.js"></script>
+        <script src="Scripts/respond.min.js"></script>
+
+        <!-- Own scripts -->
+        <script src="Scripts/Custom/app.js"></script>
+        <script src="Scripts/Custom/ForsideController.js"></script>
+        <script src="Scripts/Custom/NyhederController.js"></script>
+        <script src="Scripts/Custom/NyhedController.js"></script>
+        <script src="Scripts/Custom/RandomController.js"></script>
+        <script src="Scripts/Custom/NyhedsDashboardController.js"></script>
+        <script src="Scripts/Custom/LoginController.js"></script>
+        
+        <!-- Footer --> 
+        <footer id="footer">
+            <div class="row">
+                <div class="footerleft">
+                    <ul class="footerul">
+                        <li class="footerli"><a class="footerlinks" href="#">NYHEDER</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Gymnastikforening</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Boldklub</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Andet</a></li>
+                    </ul>
+                    <ul class="footerul">
+                        <li class="footerli"><a class="footerlinks" href="#">GALLERI</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Gymnastikforening</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Boldklub</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Andet</a></li>
+                    </ul>
+                    <ul class="footerul">
+                        <li class="footerli"><a class="footerlinks" href="#">FORENINGER</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Gymnastikforening</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Boldklub</a></li>
+                            <li class="footersubli"><a class="footersublinks" href="#">Andet</a></li>
+                    </ul>
+                    <ul class="footerul">
+                        <li class="footerli"><a class="footerlinks" href="#">KONTAKT</a></li>
+
+                        <div id="footerright">         
+                            <p class="footerp">Klinkby</p>
+                            <p class="footerp">Nejrupvej 2</p>
+                            <p class="footerp">7620 Lemvig</p>
+                            <p class="footerp">Tlf.: 29638527</p>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            
+            <!--- <div id="googlemaps" class="col-md-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2198.9057436859844!2d8.225106316095289!3d56.555478380775675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464a22017d7a4a41%3A0x7d474e54f75c4406!2sNejrupvej+2%2C+7620+Lemvig!5e0!3m2!1sda!2sdk!4v1459352774448" width="290px" height="290px" frameborder="0" style="border:0" allowfullscreen></iframe> 
+            </div> --->
+            
+        </footer>        
+    </div>
+        
+</body>
+<!-- Sidebar menu -->
+    
+    <nav class="sidebar-menu">
+        <a ng-href="#" class="nav-toggle"><span class="glyphicon glyphicon-menu-right" id="sidebarArrow" aria-hidden="true"></span></a>
+        <!--<div class="nav-toggle"><span class="glyphicon glyphicon-menu-right" id="sidebarArrow" aria-hidden="true"></span></div>-->
+        <h3 class="sidebarh3">Klinkby Alt-I-Et</h3>
+        <h5 class="sidebarh5">Administrator panel</h5>
+        <div class="streg"></div>
+        
+        <ul class="sidebarul">
+            <li class="sidebarli"><a class="sidebarlinks" ng-href="http://sorenlyng.dk/#/NyhedsDashboard">
+                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                Nyheds Dashboard</a></li>
+            <li class="sidebarli"><a class="sidebarlinks" ng-href="http://sorenlyng.dk/#/CreateNyhed">
+                <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                Tilføj Nyhed</a></li>
+            <li class="sidebarli"><a class="sidebarlinks" ng-href="#">
+                <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                Galleri</a></li>
+            <li class="sidebarli"><a class="sidebarlinks" ng-href="#">
+                <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+                Ændre Login Informationer</a></li>
+        </ul>
+        <div class="streg"></div>
+
+        <ul class="sidebarul">
+            <li class="sidebarli"><a class="sidebarlinks" ng-href="" ng-click="$root.logout()" >
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                Log ud
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- Sidebar script -->
+    <script type="text/javascript">
+    (function() {
+        
+        $('.nav-toggle').click(function() {
+            $(this).find('span').toggleClass('glyphicon-menu-right glyphicon-menu-left');
+        });
+        
+        $('.nav-toggle').click(function(e) {
+            e.preventDefault();
+           $('body').toggleClass('active-sidebar');
+        });
+    })();
+    </script>
+</html>

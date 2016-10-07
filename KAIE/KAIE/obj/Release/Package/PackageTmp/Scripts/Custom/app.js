@@ -38,6 +38,10 @@ app.config(['$routeProvider', function ($routeProvider) {
       templateUrl: 'Templates/Sponsorer.html',
       controller: 'RandomController'
     }).
+    when('/Login', {
+      templateUrl: 'Templates/Login.html',
+      controller: 'LoginController'
+    }).
     otherwise({
       redirectTo: '/'
     });
@@ -48,5 +52,20 @@ app.run(function ($rootScope, $http, $routeParams, $route) {
     
     //Bruges til at teste med!
     /*$rootScope.apiUrl = "http://localhost:54565";*/
+
+    $rootScope.logout = function() {
+    $http.post($rootScope.apiUrl + "authentication/logout").then(function(response) {
+      var data = response.data;
+      if (data.status === "success") {
+        $rootScope.isLoggedIn = false;
+        $rootScope.loggedInUserId = null;
+        $location.path('/');
+      } else {
+
+      }
+    }, function(err) {
+      $rootScope.errorHandler(err);
+    });
+  }
 });
 
