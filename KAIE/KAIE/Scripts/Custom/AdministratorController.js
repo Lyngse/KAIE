@@ -64,7 +64,6 @@ app.controller('AdministratorController', ['$scope', '$http', '$location', '$roo
     alert($scope.files.length+" files selected ... Write your Upload Code"); 
   };
   
-  CKEDITOR.replace('editor1');
    //Opret nyhed
   $scope.createNyhed = function(titel, tekst, forfatter) {
     $http.post($rootScope.apiUrl + "/Administrator/CreateNyhed", { titel: titel, tekst: tekst, forfatter: forfatter })
