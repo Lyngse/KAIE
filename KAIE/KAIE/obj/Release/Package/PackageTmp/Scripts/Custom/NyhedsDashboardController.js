@@ -6,7 +6,7 @@ app.controller('NyhedsDashboardController', ['$scope', '$http', '$location', '$r
   
   //Indlæs alle nyheder
   $scope.readAllNyheder = function() {
-      $http.get($rootScope.apiUrl + "/Nyheder/ReadAll")
+      $http.get($rootScope.apiUrl + "/Administrator/ReadNyheder")
       .success(function(data)
       {
           if(data.status === "success")
@@ -29,7 +29,7 @@ app.controller('NyhedsDashboardController', ['$scope', '$http', '$location', '$r
   
    //Update nyhed
   $scope.updateNyhed = function() {
-    $http.post($rootScope.apiUrl + "/Nyheder/Update", { id: $scope.Nyhed.Id, titel: $scope.Nyhed.Titel, tekst: $scope.Nyhed.Tekst, forfatter: $scope.Nyhed.Forfatter })
+    $http.post($rootScope.apiUrl + "/Administrator/UpdateNyhed", { id: $scope.Nyhed.Id, titel: $scope.Nyhed.Titel, tekst: $scope.Nyhed.Tekst, forfatter: $scope.Nyhed.Forfatter })
     .success(function(data)
     {
       if(data.status === "success")
@@ -49,7 +49,7 @@ app.controller('NyhedsDashboardController', ['$scope', '$http', '$location', '$r
   
   //Delete nyhed
   $scope.deleteNyhed = function(nyheder) {
-    $http.post($rootScope.apiUrl + "/Nyheder/Delete", { Id: nyheder.Id})
+    $http.post($rootScope.apiUrl + "/Administrator/DeleteNyhed", { Id: nyheder.Id})
     .success(function(data)
     {
       if(data.status === "success")

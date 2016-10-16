@@ -44,7 +44,7 @@
 -- -----------------------------------------------------------
 -- Entity Designer DDL Script for MySQL Server 4.1 and higher
 -- -----------------------------------------------------------
--- Date Created: 09/25/2016 17:29:23
+-- Date Created: 10/12/2016 16:23:58
 
 -- Generated from EDMX file: C:\Users\Søren\Desktop\KAIE\KAIE\KAIE\KAIEDB.edmx
 -- Target version: 3.0.0.0
@@ -59,6 +59,8 @@
 -- --------------------------------------------------
 
 
+--    ALTER TABLE `BilledeSet` DROP CONSTRAINT `FK_AlbumBillede`;
+
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -68,6 +70,10 @@ SET foreign_key_checks = 0;
     DROP TABLE IF EXISTS `NyhederSet`;
 
     DROP TABLE IF EXISTS `AdministratorSet`;
+
+    DROP TABLE IF EXISTS `BilledeSet`;
+
+    DROP TABLE IF EXISTS `AlbumSet`;
 
 SET foreign_key_checks = 1;
 
@@ -81,7 +87,7 @@ CREATE TABLE `NyhederSet`(
 	`Titel` longtext NOT NULL, 
 	`Dato` datetime NOT NULL, 
 	`Forfatter` longtext NOT NULL, 
-	`Tekst` longtext NOT NULL);
+	`Tekst` longblob NOT NULL);
 
 ALTER TABLE `NyhederSet` ADD PRIMARY KEY (`Id`);
 

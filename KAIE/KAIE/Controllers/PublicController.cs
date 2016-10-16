@@ -56,5 +56,26 @@ namespace KAIE.Controllers
             return Json(obj, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult ReadAlbum(int id)
+        {
+            Album a = db.AlbumSet.Find(id);
+
+            object obj = new { status = "success", Id = a.Id, Beskrivelse = a.Beskrivelse, Dato = a.Dato };
+            return Json(obj, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ReadAlbums()
+        {
+            List<Album> albums = new List<Album>();
+
+            foreach (Album a in db.AlbumSet)
+            {
+                albums.Add(new Album { Id = a.Id, Beskrivelse = a.Beskrivelse, Navn = a.Navn, Billede = a.Billede, Dato = a.Dato });
+            }
+
+            Object obj = new { status = "success", albums };
+            return Json(obj, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

@@ -3,6 +3,12 @@
   <EntityContainer Name="KAIEDBStoreContainer">
     <EntitySet Name="NyhederSet" EntityType="KAIEDB.Store.NyhederSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="AdministratorSet" EntityType="KAIEDB.Store.AdministratorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BilledeSet" EntityType="KAIEDB.Store.BilledeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AlbumSet" EntityType="KAIEDB.Store.AlbumSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="AlbumBillede" Association="KAIEDB.Store.AlbumBillede">
+      <End Role="Album" EntitySet="AlbumSet" />
+      <End Role="Billede" EntitySet="BilledeSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="NyhederSet">
     <Key>
@@ -12,7 +18,7 @@
     <Property Name="Titel" Type="longtext" Nullable="false" />
     <Property Name="Dato" Type="datetime" Nullable="false" />
     <Property Name="Forfatter" Type="longtext" Nullable="false" />
-    <Property Name="Tekst" Type="longtext" Nullable="false" />
+    <Property Name="Tekst" Type="longblob" Nullable="false" />
   </EntityType>
   <EntityType Name="AdministratorSet">
     <Key>
@@ -22,4 +28,33 @@
     <Property Name="Brugernavn" Type="longtext" Nullable="false" />
     <Property Name="Kodeord" Type="longtext" Nullable="false" />
   </EntityType>
+  <EntityType Name="BilledeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BilledeFil" Type="longblob" Nullable="false" />
+    <Property Name="AlbumId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AlbumSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Navn" Type="longtext" Nullable="false" />
+    <Property Name="Beskrivelse" Type="longtext" Nullable="false" />
+    <Property Name="Dato" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="AlbumBillede">
+    <End Role="Album" Type="KAIEDB.Store.AlbumSet" Multiplicity="1" />
+    <End Role="Billede" Type="KAIEDB.Store.BilledeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Billede">
+        <PropertyRef Name="AlbumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

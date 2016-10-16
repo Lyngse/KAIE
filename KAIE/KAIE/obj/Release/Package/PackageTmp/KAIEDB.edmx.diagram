@@ -5,8 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="72dfd3f3f4e344e1b58f06d380ba2107" Name="Diagram1" >
-        <EntityTypeShape EntityType="KAIEDB.Nyheder" Width="1.5" PointX="9.125" PointY="2.625" />
-        <EntityTypeShape EntityType="KAIEDB.Administrator" Width="1.5" PointX="6.875" PointY="2.5" />
+        <EntityTypeShape EntityType="KAIEDB.Nyheder" Width="1.5" PointX="6.875" PointY="3.375" />
+        <EntityTypeShape EntityType="KAIEDB.Administrator" Width="1.5" PointX="6.5" PointY="1.125" />
+        <EntityTypeShape EntityType="KAIEDB.Billede" Width="1.5" PointX="3.625" PointY="4.125" />
+        <EntityTypeShape EntityType="KAIEDB.Album" Width="1.5" PointX="3.625" PointY="1.125" />
+        <AssociationConnector Association="KAIEDB.AlbumBillede" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

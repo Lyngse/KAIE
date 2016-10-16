@@ -8,13 +8,13 @@ using KAIE.Attributes;
 
 namespace KAIE.Controllers
 {
-    [KAIEAuthAttributes]
+    //[KAIEAuthAttributes]
     public class AdministratorController : Controller
     {
         KAIEDBContainer db = new KAIEDBContainer();
 
         [HttpPost]
-        public ActionResult CreateNyhed(string titel, string tekst, string forfatter)
+        public ActionResult CreateNyhed(string titel, byte[] tekst, string forfatter)
         {
             DateTime dato = DateTime.Now;
             Nyheder n = db.NyhederSet.Add(new Nyheder() { Titel = titel, Tekst = tekst, Forfatter = forfatter, Dato = dato });
@@ -25,7 +25,7 @@ namespace KAIE.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateNyhed(int id, string titel, string tekst, string forfatter)
+        public ActionResult UpdateNyhed(int id, string titel, byte[] tekst, string forfatter)
         {
             Nyheder n = db.NyhederSet.Find(id);
 
@@ -60,14 +60,6 @@ namespace KAIE.Controllers
             return Json(new { status = "success" });
         }
 
-        public ActionResult ReadAlbum(int id)
-        {
-            Album a = db.AlbumSet.Find(id);
-
-            object obj = new { status = "success", Id = a.Id, Beskrivelse = a.Beskrivelse, Dato = a.Dato };
-            return Json(obj, JsonRequestBehavior.AllowGet);
-        }
-
         [HttpPost]
         public ActionResult UpdateAlbum(int id, string navn, string beskrivelse)
         {
@@ -97,19 +89,6 @@ namespace KAIE.Controllers
             return Json(new { status = "success", message = "Album slettet" });
         }
 
-        public ActionResult ReadBilleder(int id)
-        {
-            Album a = db.AlbumSet.Find(id);
-            List<object> billeder = new List<object>();
-
-            foreach (Billede b in a.Billede)
-            {
-                billeder.Add(b);
-            }
-
-            return Json(new { status = "success", Billeder = billeder }, JsonRequestBehavior.AllowGet);
-        }
-
         [HttpPost]
         public ActionResult DeleteBillede(int id)
         {
@@ -119,6 +98,14 @@ namespace KAIE.Controllers
             db.SaveChanges();
 
             return Json(new { status = "success", message = "Billede slettet" });
+        }
+
+        [HttpPost]
+        public ActionResult UploadBilleder(int id, byte[] billeder) //id skal være et albums id
+        {
+            Album a = db.AlbumSet.Find(id);
+
+            return Json(new { status = "success", message = "Billeder uploadet" });
         }
     }
 }

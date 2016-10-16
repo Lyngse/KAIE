@@ -29,6 +29,15 @@ body{
   padding-bottom: 200px;
 }
 
+.ta-editor {
+  min-height: 300px;
+  height: auto;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+  margin:20px 0;
+}
+
 .btn-fab {
   background-color: #9a1e1e;
   position: fixed;
@@ -590,7 +599,6 @@ md-content {
 .FDF-link:focus {
   text-decoration: none;
   color: #000;
-  border-bottom: 1px solid #fff;
 }
 
 /*------------------------------ */

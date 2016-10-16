@@ -27,28 +27,6 @@ app.controller('NyhederController', ['$scope', '$http', '$location', '$rootScope
   }
   $scope.readAllNyheder();
   
-  //Opret nyhed
-  $scope.createNyhed = function(titel, tekst, forfatter) {
-    $http.post($rootScope.apiUrl + "/Administrator/CreateNyhed", { titel: titel, tekst: tekst, forfatter: forfatter })
-    .success(function(data)
-    {
-      if(data.status === "success")
-      {
-          console.log("Oprettet..");
-      }
-      else
-      {
-          $scope.error = "Nyhed kunne ikke oprettes";
-          console.log("Nope");
-          console.log(data.details);  
-      }
-    }).error(function(err)
-    {
-      $scope.createErr = err;
-      console.log("Nej");
-    })
-  }
-  
   //Update nyhed
   $scope.updateNyhed = function(titel, tekst, forfatter) {
     $http.post($rootScope.apiUrl + "/Administrator/UpdateNyhed", { titel: $scope.Nyheder.Titel, tekst: $scope.Nyheder.Tekst, forfatter: $scope.Nyheder.Forfatter })

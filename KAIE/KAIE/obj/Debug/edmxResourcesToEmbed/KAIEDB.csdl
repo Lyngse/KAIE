@@ -3,6 +3,12 @@
   <EntityContainer Name="KAIEDBContainer" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="NyhederSet" EntityType="KAIEDB.Nyheder" />
     <EntitySet Name="AdministratorSet" EntityType="KAIEDB.Administrator" />
+    <EntitySet Name="BilledeSet" EntityType="KAIEDB.Billede" />
+    <EntitySet Name="AlbumSet" EntityType="KAIEDB.Album" />
+    <AssociationSet Name="AlbumBillede" Association="KAIEDB.AlbumBillede">
+      <End Role="Album" EntitySet="AlbumSet" />
+      <End Role="Billede" EntitySet="BilledeSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Nyheder">
     <Key>
@@ -12,7 +18,7 @@
     <Property Name="Titel" Type="String" Nullable="false" />
     <Property Name="Dato" Type="DateTime" Nullable="false" />
     <Property Name="Forfatter" Type="String" Nullable="false" />
-    <Property Name="Tekst" Type="String" Nullable="false" />
+    <Property Name="Tekst" Type="Binary" Nullable="false" />
   </EntityType>
   <EntityType Name="Administrator">
     <Key>
@@ -22,4 +28,35 @@
     <Property Name="Brugernavn" Type="String" Nullable="false" />
     <Property Name="Kodeord" Type="String" Nullable="false" />
   </EntityType>
+  <EntityType Name="Billede">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BilledeFil" Type="Binary" Nullable="false" />
+    <NavigationProperty Name="Album" Relationship="KAIEDB.AlbumBillede" FromRole="Billede" ToRole="Album" />
+    <Property Name="AlbumId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Album">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Navn" Type="String" Nullable="false" />
+    <Property Name="Beskrivelse" Type="String" Nullable="false" />
+    <Property Name="Dato" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Billede" Relationship="KAIEDB.AlbumBillede" FromRole="Album" ToRole="Billede" />
+  </EntityType>
+  <Association Name="AlbumBillede">
+    <End Type="KAIEDB.Album" Role="Album" Multiplicity="1" />
+    <End Type="KAIEDB.Billede" Role="Billede" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Billede">
+        <PropertyRef Name="AlbumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -18,6 +18,6 @@ namespace KAIE
         public string Titel { get; set; }
         public System.DateTime Dato { get; set; }
         public string Forfatter { get; set; }
-        public string Tekst { get; set; }
+        public byte[] Tekst { get; set; }
     }
 }

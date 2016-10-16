@@ -1,4 +1,4 @@
-var app = angular.module('KAIE', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngAria', 'ngMessages', 'flow', 'ngMaterial'  ]);
+var app = angular.module('KAIE', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngAria', 'ngMessages', 'flow', 'ngMaterial' ]);
 
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider.

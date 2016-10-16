@@ -6,7 +6,7 @@ app.controller('NyhederController', ['$scope', '$http', '$location', '$rootScope
   
   //Indlæs alle nyheder
   $scope.readAllNyheder = function() {
-      $http.get($rootScope.apiUrl + "/Nyheder/ReadAll")
+      $http.get($rootScope.apiUrl + "/Public/ReadNyheder")
       .success(function(data)
       {
           if(data.status === "success")
@@ -27,31 +27,9 @@ app.controller('NyhederController', ['$scope', '$http', '$location', '$rootScope
   }
   $scope.readAllNyheder();
   
-  //Opret nyhed
-  $scope.createNyhed = function(titel, tekst, forfatter) {
-    $http.post($rootScope.apiUrl + "/Nyheder/Create", { titel: titel, tekst: tekst, forfatter: forfatter })
-    .success(function(data)
-    {
-      if(data.status === "success")
-      {
-          console.log("Oprettet..");
-      }
-      else
-      {
-          $scope.error = "Nyhed kunne ikke oprettes";
-          console.log("Nope");
-          console.log(data.details);  
-      }
-    }).error(function(err)
-    {
-      $scope.createErr = err;
-      console.log("Nej");
-    })
-  }
-  
   //Update nyhed
   $scope.updateNyhed = function(titel, tekst, forfatter) {
-    $http.post($rootScope.apiUrl + "/Nyheder/Update", { titel: $scope.Nyheder.Titel, tekst: $scope.Nyheder.Tekst, forfatter: $scope.Nyheder.Forfatter })
+    $http.post($rootScope.apiUrl + "/Administrator/UpdateNyhed", { titel: $scope.Nyheder.Titel, tekst: $scope.Nyheder.Tekst, forfatter: $scope.Nyheder.Forfatter })
     .success(function(data)
     {
       if(data.status === "success")
@@ -71,7 +49,7 @@ app.controller('NyhederController', ['$scope', '$http', '$location', '$rootScope
   
   //Delete nyhed
   $scope.deleteNyhed = function() {
-    $http.post($rootScope.apiUrl + "/Nyheder/Delete", { Id: $scope.Nyheder.Id})
+    $http.post($rootScope.apiUrl + "/Administrator/DeleteNyhed", { Id: $scope.Nyheder.Id})
     .success(function(data)
     {
       if(data.status === "success")
