@@ -44,7 +44,7 @@
 -- -----------------------------------------------------------
 -- Entity Designer DDL Script for MySQL Server 4.1 and higher
 -- -----------------------------------------------------------
--- Date Created: 10/12/2016 16:23:58
+-- Date Created: 10/17/2016 14:36:00
 
 -- Generated from EDMX file: C:\Users\Søren\Desktop\KAIE\KAIE\KAIE\KAIEDB.edmx
 -- Target version: 3.0.0.0
@@ -87,7 +87,7 @@ CREATE TABLE `NyhederSet`(
 	`Titel` longtext NOT NULL, 
 	`Dato` datetime NOT NULL, 
 	`Forfatter` longtext NOT NULL, 
-	`Tekst` longblob NOT NULL);
+	`Tekst` longtext NOT NULL);
 
 ALTER TABLE `NyhederSet` ADD PRIMARY KEY (`Id`);
 

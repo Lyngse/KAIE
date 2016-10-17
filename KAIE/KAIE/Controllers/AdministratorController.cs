@@ -14,7 +14,7 @@ namespace KAIE.Controllers
         KAIEDBContainer db = new KAIEDBContainer();
 
         [HttpPost]
-        public ActionResult CreateNyhed(string titel, byte[] tekst, string forfatter)
+        public ActionResult CreateNyhed(string titel, string tekst, string forfatter)
         {
             DateTime dato = DateTime.Now;
             Nyheder n = db.NyhederSet.Add(new Nyheder() { Titel = titel, Tekst = tekst, Forfatter = forfatter, Dato = dato });
@@ -25,7 +25,7 @@ namespace KAIE.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateNyhed(int id, string titel, byte[] tekst, string forfatter)
+        public ActionResult UpdateNyhed(int id, string titel, string tekst, string forfatter)
         {
             Nyheder n = db.NyhederSet.Find(id);
 

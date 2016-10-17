@@ -18,7 +18,7 @@
     <Property Name="Titel" Type="longtext" Nullable="false" />
     <Property Name="Dato" Type="datetime" Nullable="false" />
     <Property Name="Forfatter" Type="longtext" Nullable="false" />
-    <Property Name="Tekst" Type="longblob" Nullable="false" />
+    <Property Name="Tekst" Type="longtext" Nullable="false" />
   </EntityType>
   <EntityType Name="AdministratorSet">
     <Key>

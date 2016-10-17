@@ -18,7 +18,7 @@
     <Property Name="Titel" Type="String" Nullable="false" />
     <Property Name="Dato" Type="DateTime" Nullable="false" />
     <Property Name="Forfatter" Type="String" Nullable="false" />
-    <Property Name="Tekst" Type="Binary" Nullable="false" />
+    <Property Name="Tekst" Type="String" Nullable="false" />
   </EntityType>
   <EntityType Name="Administrator">
     <Key>
