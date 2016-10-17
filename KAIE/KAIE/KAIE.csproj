@@ -995,7 +995,12 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Custom\AdminCreateNyhedController.js" />
+    <Content Include="Scripts\Custom\AdminGalleriController.js" />
+    <Content Include="Scripts\Custom\AdminGallerierController.js" />
     <Content Include="Scripts\Custom\AdministratorController.js" />
+    <Content Include="Scripts\Custom\AdminNyhedController.js" />
+    <Content Include="Scripts\Custom\AdminNyhederController.js" />
     <Content Include="Scripts\Custom\app.js" />
     <Content Include="Scripts\Custom\BegivenhederController.js" />
     <Content Include="Scripts\Custom\Directives\ngFileModel.js" />

@@ -10,7 +10,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     templateUrl: 'Templates/Nyheder.html',
     controller: 'NyhederController'
   }).
-  when('/Nyheder/Nyhed' /*:nyhederId'*/, {
+  when('/Nyheder/:nyhederId', {
     templateUrl: 'Templates/Nyhed.html',
     controller: 'NyhedController'
   }).
@@ -52,23 +52,23 @@ app.config(['$routeProvider', function ($routeProvider) {
   }).
   when('/Administrator/NyNyhed', {
     templateUrl: 'Templates/Administrator/CreateNyhed.html',
-    controller: 'AdministratorController'
+    controller: 'AdminCreateNyhedController'
   }).
   when('/Administrator/Galleri', {
     templateUrl: 'Templates/Administrator/Galleri.html',
-    controller: 'AdministratorController'
+    controller: 'AdminGalleriController'
   }).
   when('/Administrator/GalleriGrid', {
     templateUrl: 'Templates/AdministratorGalleriGrid.html',
-    controller: 'AdministratorController'
+    controller: 'AdminGallerierController'
   }).
   when('/Administrator/Nyhed', {
     templateUrl: 'Templates/Administrator/Nyhed.html',
-    controller: 'AdministratorController'
+    controller: 'AdminNyhedController'
   }).
   when('/Administrator/NyhedsGrid', {
     templateUrl: 'Templates/Administrator/NyhedsGrid.html',
-    controller: 'AdministratorController'
+    controller: 'AdminNyhederController'
   }).
   when('/Boldklubben', {
     templateUrl: 'Templates/Foreninger/Boldklubben.html',

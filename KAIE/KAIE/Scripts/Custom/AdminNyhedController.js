@@ -1,5 +1,4 @@
-app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope', '$routeParams', function ($scope, $http, $location, $rootScope, $routeParams) {
-  
+app.controller('AdminNyhedController', ['$scope', '$http', '$location', '$rootScope', '$routeParams', function ($scope, $http, $location, $rootScope, $routeParams) { 
   //Indlæs bestemt nyheder fra deres id
   $scope.readNyheder = function() {
     $http.get($rootScope.apiUrl + "/Public/ReadNyhed?id=" + $routeParams.nyhederId)
@@ -7,7 +6,7 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
     {
       if(data.status ==="success")
       {
-          $scope.nyhed = data;
+          $scope.Nyhed = data;
           console.log("Nyhed loaded");                                     
       }
       else
@@ -23,7 +22,7 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
   
   //Update nyhed
   $scope.updateNyhed = function(titel, tekst, forfatter) {
-    $http.post($rootScope.apiUrl + "/Administrator/UpdateNyhed", { Id: $scope.Nyhed.Id, Titel: titel, Tekst: tekst, Forfatter: forfatter })
+    $http.post($rootScope.apiUrl + "/Administrator/UpdateNyhed", { titel: $scope.Nyheder.Titel, tekst: $scope.Nyheder.Tekst, forfatter: $scope.Nyheder.Forfatter })
     .success(function(data)
     {
       if(data.status === "success")
@@ -41,13 +40,24 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
     })
   }
   
-  //Gå tilbage til nyhedsoversigten nyhed med id
-  $scope.gotoNyheder = function () {
-    $location.url("/Nyheder");
+  //Delete nyhed
+  $scope.deleteNyhed = function() {
+    $http.post($rootScope.apiUrl + "/Administrator/DeleteNyhed", { Id: $scope.Nyheder.Id})
+    .success(function(data)
+    {
+      if(data.status === "success")
+      {
+        console.log("Nyhed er blevet slettet");
+        $scope.readNyheder();
+      }
+      else
+      {
+        console.log("Nyhed kunne ikke slettes");
+        $scope.error = "Nyhed kunne ikke slettes";
+      }
+    }).error(function(err)
+    {
+      $scope.deleteErr = err;
+    })
   }
-  
-  $scope.gotoUpdateNyhed = function (nyheder) {
-      $location.url($location.url() +"/Update");
-  }
-
 }]);

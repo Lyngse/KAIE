@@ -2,6 +2,27 @@
   <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
     <h2>Nyehder</h2>
     
+    <div class="col-sm-4 col-md-3" ng-repeat="nyhed in nyheder">
+      <div class="thumbnail">
+        <img class="nyheder-img" src="Images/yoga.jpg" alt="...">
+        <div class="caption">
+          <h3>{{nyhed.Titel}}</h3>
+          <p>{{nyhed.Tekst | limitTo:130}}...</p>
+          <button type="button" class="btn btn-info" ng-click="gotoNyhed(nyhed.Id)"> Læs mere! </button>
+        </div>
+      </div>
+    </div>
+    <!--
+    <div class="col-sm-4 col-md-3">
+      <div class="thumbnail">
+        <img class="nyheder-img" src="Images/yoga.jpg" alt="...">
+        <div class="caption">
+          <h3>Thumbnail label</h3>
+          <p>Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst.  </p>
+          <button type="button" class="btn btn-info" ng-click="gotoNyhed(nyheder.id)"> Læs mere! </button>
+        </div>
+      </div>
+    </div>
     <div class="col-sm-4 col-md-3">
       <div class="thumbnail">
         <img class="nyheder-img" src="Images/yoga.jpg" alt="...">
@@ -22,27 +43,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4 col-md-3">
-      <div class="thumbnail">
-        <img class="nyheder-img" src="Images/yoga.jpg" alt="...">
-        <div class="caption">
-          <h3>Thumbnail label</h3>
-          <p>Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst.   </p>
-          <button type="button" class="btn btn-info" ng-click="gotoNyhed(nyheder.id)"> Læs mere! </button>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-md-3">
-      <div class="thumbnail">
-        <img class="nyheder-img" src="Images/yoga.jpg" alt="...">
-        <div class="caption">
-          <h3>Thumbnail label</h3>
-          <p>Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst. Dette skal være en lang tekst.  </p>
-          <button type="button" class="btn btn-info" ng-click="gotoNyhed(nyheder.id)"> Læs mere! </button>
-        </div>
-      </div>
-    </div>
-    
+    -->
   </div>
 </div>
 
