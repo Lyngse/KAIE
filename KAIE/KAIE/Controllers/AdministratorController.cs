@@ -17,11 +17,12 @@ namespace KAIE.Controllers
         public ActionResult CreateNyhed(string titel, string tekst, string forfatter)
         {
             DateTime dato = DateTime.Now;
+
             Nyheder n = db.NyhederSet.Add(new Nyheder() { Titel = titel, Tekst = tekst, Forfatter = forfatter, Dato = dato });
 
             db.SaveChanges();
 
-            return Json(new { status = "success", message = "En ny nyhed blev uploadet" }, JsonRequestBehavior.AllowGet);
+            return Json(new { status = "success", message = "En ny nyhed blev uploadet" });
         }
 
         [HttpPost]
@@ -36,7 +37,7 @@ namespace KAIE.Controllers
             db.Entry(n).State = EntityState.Modified;
             db.SaveChanges();
 
-            return Json(new { status = "success", message = "Nyhed redigeret" }, JsonRequestBehavior.AllowGet);
+            return Json(new { status = "success", message = "Nyhed redigeret" });
 
         }
 
@@ -47,7 +48,7 @@ namespace KAIE.Controllers
             db.NyhederSet.Remove(n);
             db.SaveChanges();
 
-            return Json(new { status = "success", message = "Nyhed slettet" }, JsonRequestBehavior.AllowGet);
+            return Json(new { status = "success", message = "Nyhed slettet" });
         }
 
         [HttpPost]
