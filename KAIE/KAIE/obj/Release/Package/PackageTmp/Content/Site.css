@@ -30,7 +30,7 @@ body{
 }
 
 .ta-editor {
-  min-height: 300px;
+  min-height: 500px;
   height: auto;
   overflow: auto;
   font-family: inherit;
@@ -653,22 +653,16 @@ md-content {
   opacity: 1;
 }
 
-/*
-.udlejning-thumbnail {
-  width: auto;
-  height: 160px;
-  background-position: center center;
-  background-repeat: no-repeat;
+/*------------------------------ */
+/* ----- Administrator ------ */
+/*------------------------------ */
+/* Create nyhed */
+#btn-upload {
+  float: right;
   display: block;
-  padding: 4px;
-  margin-bottom: 20px;
-  line-height: 1.42857143;
-  border: 1px solid #000000;
-  border-radius: 4px;
-  -webkit-transition: border .2s ease-in-out;
-       -o-transition: border .2s ease-in-out;
-          transition: border .2s ease-in-out;
-}*/
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
 
 
 /* Small seized screen */
