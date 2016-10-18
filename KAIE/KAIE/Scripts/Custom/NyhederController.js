@@ -14,6 +14,7 @@ app.controller('NyhederController', ['$scope', '$http', '$location', '$rootScope
               $scope.nyheder = data;
               console.log($scope.Nyheder.nList);
               console.log("Nyheder loadet");
+              console.log($scope.nyheder);
           }
           else
           {
@@ -28,8 +29,8 @@ app.controller('NyhederController', ['$scope', '$http', '$location', '$rootScope
   $scope.readAllNyheder();
   
   //Gå til bestemt nyhed med id
-  $scope.gotoNyhed = function (nyheder) {
-    $location.url("/Nyheder/" + nyheder.Id);
+  $scope.gotoNyhed = function (id) {
+    $location.url("/Nyheder/" + id);
   }
   
   $scope.gotoCreateNyhed = function() {

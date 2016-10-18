@@ -25,7 +25,7 @@ namespace KAIE.Controllers
 
             foreach(Nyheder n in db.NyhederSet.ToList())
             {
-                nList.Add(n);
+                nList.Add( new Nyheder { Id = n.Id, Dato = n.Dato, Tekst = n.Tekst, Titel = n.Titel, Forfatter = n.Forfatter });
             }
 
 
