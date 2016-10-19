@@ -7,7 +7,7 @@ app.controller('NyhedController', ['$scope', '$http', '$location', '$rootScope',
     {
       if(data.status ==="success")
       {
-          $scope.Nyhed = data;
+          $scope.nyhed = data;
           console.log("Nyhed loaded");                                     
       }
       else

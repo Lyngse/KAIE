@@ -1007,6 +1007,7 @@
     <Content Include="Scripts\Custom\ForeningerController.js" />
     <Content Include="Scripts\Custom\ForsideController.js" />
     <Content Include="Scripts\Custom\GalleriController.js" />
+    <Content Include="Scripts\Custom\GallerierController.js" />
     <Content Include="Scripts\Custom\LoginController.js" />
     <Content Include="Scripts\Custom\NyhedController.js" />
     <Content Include="Scripts\Custom\NyhederController.js" />

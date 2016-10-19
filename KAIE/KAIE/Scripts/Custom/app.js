@@ -26,7 +26,11 @@ app.config(['$routeProvider', function ($routeProvider) {
     templateUrl: 'Templates/Kontakt.html',
     controller: 'RandomController'
   }).
-  when('/Galleri', {
+  when('/Gallerier', {
+    templateUrl: 'Templates/Gallerier.html',
+    controller: 'GallerierController'
+  }).
+  when('/Gallerier/:galleriId', {
     templateUrl: 'Templates/Galleri.html',
     controller: 'GalleriController'
   }).

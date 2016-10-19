@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+    <h2>Galleri</h2>
+    <div class="galleri-container md-whiteframe-2dp" ng-repeat="galleri in gallerier">
+      <a class="galleri-link" ng-href="#/Galleri/{{galleri.Id}}">
+        <p class="galleri-header">{{galleri.Titel}}</p>
+        <span class="galleri-icon glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+        <p class="galleri-forfatter">{{galleri.Forfatter}}</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+{{galleri.Id}}
